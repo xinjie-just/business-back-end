@@ -8,134 +8,120 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_531074_vyiyhg8tbn1giudi.css">
         <link rel="stylesheet" href="styles/tuobei-business-back-end.css">
     </head>
     <body>
-        <div class="wrapper">
-            <header id="header" role="banner">
-                <a href="#" class="logo">拓贝商家后台管理系统</a>
-                <!-- Header Navbar -->
-                <nav class="navbar">
-                    <!-- Sidebar toggle button-->
-                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                        <span class="sr-only">Toggle navigation</span>
+        <header id="header" role="banner">
+            <a href="#" class="logo">拓贝商家后台管理系统</a>
+            <ul class="custom-menu">
+                <li class="sign-out">
+                    <a href="#" title="退出">退出</a>
+                </li>
+                <li class="user-menu">
+                    <img src="" class="user-image" alt="User Image">
+                    <span class="user-nickname">Hello,韩雪梅</span>
+                </li>
+            </ul>
+        </header>
+        <main id="main" role="main">
+            <ul class="sidebar-menu" data-widget="tree">
+                <li>
+                    <a href="" title="基本信息">
+                        <i class="iconfont icon-basic-info"></i>基本信息
                     </a>
-
-                    <ul class="nav navbar-nav navbar-custom-menu">
-                        <li class="sign-out">
-                            <a href="#" title="退出">退出</a>
-                        </li>
-                        <!-- User Account -->
-                        <li class="dropdown user user-menu">
-                            <img src="" class="user-image" alt="User Image">
-                            <span class="user-nickname">Hello,韩雪梅</span>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- Left side column -->
-            <aside class="main-sidebar">
-                <!-- sidebar menu -->
-                <ul class="sidebar-menu" data-widget="tree">
-                    <li>
-                        <a href="" title="基本信息">
-                            <i class="fa fa-book"></i><span>基本信息</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" title="分店管理">
-                            <i class="fa fa-book"></i><span>分店管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" title="消费记录">
-                            <i class="fa fa-book"></i><span>消费记录</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" title="商家卡管理">
-                            <i class="fa fa-book"></i><span>商家卡管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" title="提现管理">
-                            <i class="fa fa-book"></i><span>提现管理</span>
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-            <main id="main" role="main">
-                <form action="#" method="" id="basicInfo" name="basicInfo" class="basic-info">
-                    <div class="row">
-                        <div class="code">
-                            <label for="code">商家编号：</label>
-                            <select name="code" id="code">
-                                <option value="0">0000001</option>
-                                <option value="1">0000002</option>
-                                <option value="2">0000003</option>
-                                <option value="3">0000004</option>
-                            </select>
-                        </div>
-                        <div class="name">
-                            <label for="name">商家名称：</label>
-                            <input type="text" name="name" id="name" placeholder="请输入商家名称">
-                        </div>
+                </li>
+                <li>
+                    <a href="" title="分店管理">
+                        <i class="iconfont icon-subbranch"></i>分店管理
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="消费记录">
+                        <i class="iconfont icon-record"></i><span>消费记录</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="商家卡管理">
+                        <i class="iconfont icon-card"></i><span>商家卡管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="提现管理">
+                        <i class="iconfont icon-withdraw"></i><span>提现管理</span>
+                    </a>
+                </li>
+            </ul>
+            <form action="#" method="" id="basicInfo" name="basicInfo" class="basic-info">
+                <div class="row">
+                    <div class="code">
+                        <label for="code">商家编号：</label>
+                        <select name="code" id="code">
+                            <option value="0">0000001</option>
+                            <option value="1">0000002</option>
+                            <option value="2">0000003</option>
+                            <option value="3">0000004</option>
+                        </select>
                     </div>
-                    <div class="row">
-                        <div class="linkman">
-                            <label for="linkman">联系人：</label>
-                            <input type="text" name="linkman" id="linkman" placeholder="请输入商家联系人">
-                        </div>
-                        <div class="telphone">
-                            <label for="telphone">商家电话：</label>
-                            <input type="text" name="telphone" id="telphone" placeholder="请输入商家电话号码">
-                        </div>
+                    <div class="name">
+                        <label for="name">商家名称：</label>
+                        <input type="text" name="name" id="name" placeholder="请输入商家名称">
                     </div>
-                    <div class="row">
-                        <div class="opening-time">
-                            <label for="openingTime">营业时间：</label>
-                            <input type="text" name="openingTime" id="openingTime" placeholder="请输入营业时间">
-                        </div>
-                        <div class="legal-person">
-                            <label for="legalPerson">商家法人：</label>
-                            <input type="text" name="legalPerson" id="legalPerson" placeholder="请输入商家法人">
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="linkman">
+                        <label for="linkman">联系人：</label>
+                        <input type="text" name="linkman" id="linkman" placeholder="请输入商家联系人">
                     </div>
-                    <div class="row">
-                        <div class="address">
-                            <label for="address">商家地址：</label>
-                            <input type="text" name="address" id="address" placeholder="请输入商家详细地址">
-                        </div>
+                    <div class="telphone">
+                        <label for="telphone">商家电话：</label>
+                        <input type="text" name="telphone" id="telphone" placeholder="请输入商家电话号码">
                     </div>
-                    <div class="row">
-                        <div class="business-license">
-                            <label for="businessLicense">营业执照：</label>
-                            <input type="text" name="businessLicense" id="businessLicense" placeholder="上传营业执照照片(2张)">
-                        </div>
-                        <div class="business-picture">
-                            <label for="businessPicture">商家照片：</label>
-                            <input type="text" name="businessPicture" id="businessPicture" placeholder="上传商家照片(最多6张)">
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="opening-time">
+                        <label for="openingTime">营业时间：</label>
+                        <input type="text" name="openingTime" id="openingTime" placeholder="请输入营业时间">
                     </div>
-                    <div class="row">
-                        <div class="business-intro">
-                            <label for="businessIntro">商家介绍：</label>
-                            <textarea name="businessIntro" id="businessIntro" placeholder="描述商家经营范围，商品服务等信息"></textarea>
-                        </div>
+                    <div class="legal-person">
+                        <label for="legalPerson">商家法人：</label>
+                        <input type="text" name="legalPerson" id="legalPerson" placeholder="请输入商家法人">
                     </div>
-                    <div class="row">
-                        <button class="cancel" id="cancel" name="cancel" title="取消">取消</button>
-                        <button class="confirm" id="confirm" name="confirm" title="确定">确定</button>
+                </div>
+                <div class="row">
+                    <div class="address">
+                        <label for="address">商家地址：</label>
+                        <input type="text" name="address" id="address" placeholder="请输入商家详细地址">
                     </div>
-                    <div class="logo-img">
-                        <div class="img-wrapper"></div>
-                        <button class="update-logo">更改LOGO</button>
+                </div>
+                <div class="row">
+                    <div class="business-license">
+                        <label for="businessLicense">营业执照：</label>
+                        <input type="text" name="businessLicense" id="businessLicense" placeholder="上传营业执照照片(2张)">
                     </div>
-                </form>
-            </main>
-            <footer id="footer" role="contentinfo">
-            </footer>
-        </div>
+                    <div class="business-picture">
+                        <label for="businessPicture">商家照片：</label>
+                        <input type="text" name="businessPicture" id="businessPicture" placeholder="上传商家照片(最多6张)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="business-intro">
+                        <label for="businessIntro">商家介绍：</label>
+                        <textarea name="businessIntro" id="businessIntro" placeholder="描述商家经营范围，商品服务等信息"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="cancel" id="cancel" name="cancel" title="取消">取消</button>
+                    <button class="confirm" id="confirm" name="confirm" title="确定">确定</button>
+                </div>
+                <div class="logo-img">
+                    <div class="img-wrapper"></div>
+                    <button class="update-logo">更改LOGO</button>
+                </div>
+            </form>
+        </main>
+        <footer id="footer" role="contentinfo">
+        </footer>
         <script src="scripts/jquery.min.js"></script>
         <script src="scripts/bootstrap.min.js"></script>
         <script src="scripts/tuobei-business-back-end.js"></script>
