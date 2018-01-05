@@ -52,7 +52,8 @@ fieldset {
 
 //在 IE浏览器 和 iOS 设备的浏览器中阻止调整字体的尺寸
 html {
-    font-size: $font-size;
+  height: 100%;
+  font-size: $font-size;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -69,6 +70,7 @@ html {
 
 body {
   width: 100%;
+  height: 100%;
   font-size: 1rem;
   color: $text-color;
   font-family: "Microsoft Yahei", Arial, sans-serif;

@@ -14,20 +14,22 @@
     <body>
         <header id="header" role="banner">
             <a href="#" class="logo">拓贝商家后台管理系统</a>
-            <ul class="custom-menu">
-                <li class="sign-out">
-                    <a href="#" title="退出">退出</a>
-                </li>
-                <li class="user-menu">
-                    <img src="" class="user-image" alt="User Image">
-                    <span class="user-nickname">Hello,韩雪梅</span>
-                </li>
-            </ul>
+            <nav class="navbar">
+                <ul class="custom-menu">
+                    <li class="sign-out">
+                        <a href="#" title="退出">退出</a>
+                    </li>
+                    <li class="user-menu">
+                        <img src="" class="user-image" alt="User Image">
+                        <span class="user-nickname">Hello,韩雪梅</span>
+                    </li>
+                </ul>
+            </nav>
         </header>
         <main id="main" role="main">
-            <ul class="sidebar-menu" data-widget="tree">
+            <ul class="sidebar-menu" id="sidebarMenu" data-widget="tree">
                 <li>
-                    <a href="" title="基本信息">
+                    <a href="" title="基本信息" class="active">
                         <i class="iconfont icon-basic-info"></i>基本信息
                     </a>
                 </li>
@@ -52,73 +54,76 @@
                     </a>
                 </li>
             </ul>
-            <form action="#" method="" id="basicInfo" name="basicInfo" class="basic-info">
-                <div class="row">
-                    <div class="code">
-                        <label for="code">商家编号：</label>
-                        <select name="code" id="code">
-                            <option value="0">0000001</option>
-                            <option value="1">0000002</option>
-                            <option value="2">0000003</option>
-                            <option value="3">0000004</option>
-                        </select>
+            <div class="content-wrapper">
+                <form action="#" method="" id="basicInfo" name="basicInfo" class="basic-info">
+                    <!-- 必填，必选字段在 label 中添加 required 类 -->
+                    <div class="form-left">
+                        <div class="row one-line">
+                            <div class="code">
+                                <label for="code" class="required">商家编号</label>
+                                <input type="text" name="code" id="code" placeholder="请输入商家所在地区编号">
+                            </div>
+                            <div class="name">
+                                <label for="name" class="required">商家名称</label>
+                                <input type="text" name="name" id="name" placeholder="请输入商家名称">
+                            </div>
+                        </div>
+                        <div class="row one-line">
+                            <div class="linkman">
+                                <label for="linkman" class="required">联系人</label>
+                                <input type="text" name="linkman" id="linkman" placeholder="请输入联系人姓名">
+                            </div>
+                            <div class="telphone">
+                                <label for="telphone" class="required">商家号码</label>
+                                <input type="text" name="telphone" id="telphone" placeholder="请输入商家电话号码">
+                            </div>
+                        </div>
+                        <div class="row one-line">
+                            <div class="opening-time">
+                                <label for="startTime" class="required">营业时间</label>
+                                <input type="text" name="startTime" id="startTime" placeholder="开始时间">
+                                <input type="text" name="endTime" id="endTime" placeholder="结束时间">
+                            </div>
+                            <div class="legal-person">
+                                <label for="legalPerson" class="required">商家法人</label>
+                                <input type="text" name="legalPerson" id="legalPerson" placeholder="请输入商家法人姓名">
+                            </div>
+                        </div>
+                        <div class="row one-line">
+                            <div class="address">
+                                <label for="address" class="required">商家地址</label>
+                                <input type="text" name="address" id="address" placeholder="请输入商家详细地址">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="business-license">
+                                <label for="businessLicense" class="required">营业执照</label>
+                                <input type="text" name="businessLicense" id="businessLicense" placeholder="上传营业执照照片(2张)">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="business-picture">
+                                <label for="businessPicture" class="required">商家照片</label>
+                                <input type="text" name="businessPicture" id="businessPicture" placeholder="上传商家照片(最多6张)">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="business-intro">
+                                <label for="businessIntro" class="required">商家介绍</label>
+                                <textarea name="businessIntro" id="businessIntro" placeholder="描述商家经营范围，商品服务等信息"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button class="cancel" id="cancel" name="cancel" title="取消">取消</button>
+                            <button class="confirm" id="confirm" name="confirm" title="确定">确定</button>
+                        </div>
                     </div>
-                    <div class="name">
-                        <label for="name">商家名称：</label>
-                        <input type="text" name="name" id="name" placeholder="请输入商家名称">
+                    <div class="logo-img">
+                        <div class="img-wrapper"></div>
+                        <button class="update-logo">更改LOGO</button>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="linkman">
-                        <label for="linkman">联系人：</label>
-                        <input type="text" name="linkman" id="linkman" placeholder="请输入商家联系人">
-                    </div>
-                    <div class="telphone">
-                        <label for="telphone">商家电话：</label>
-                        <input type="text" name="telphone" id="telphone" placeholder="请输入商家电话号码">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="opening-time">
-                        <label for="openingTime">营业时间：</label>
-                        <input type="text" name="openingTime" id="openingTime" placeholder="请输入营业时间">
-                    </div>
-                    <div class="legal-person">
-                        <label for="legalPerson">商家法人：</label>
-                        <input type="text" name="legalPerson" id="legalPerson" placeholder="请输入商家法人">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="address">
-                        <label for="address">商家地址：</label>
-                        <input type="text" name="address" id="address" placeholder="请输入商家详细地址">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="business-license">
-                        <label for="businessLicense">营业执照：</label>
-                        <input type="text" name="businessLicense" id="businessLicense" placeholder="上传营业执照照片(2张)">
-                    </div>
-                    <div class="business-picture">
-                        <label for="businessPicture">商家照片：</label>
-                        <input type="text" name="businessPicture" id="businessPicture" placeholder="上传商家照片(最多6张)">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="business-intro">
-                        <label for="businessIntro">商家介绍：</label>
-                        <textarea name="businessIntro" id="businessIntro" placeholder="描述商家经营范围，商品服务等信息"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <button class="cancel" id="cancel" name="cancel" title="取消">取消</button>
-                    <button class="confirm" id="confirm" name="confirm" title="确定">确定</button>
-                </div>
-                <div class="logo-img">
-                    <div class="img-wrapper"></div>
-                    <button class="update-logo">更改LOGO</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </main>
         <footer id="footer" role="contentinfo">
         </footer>
