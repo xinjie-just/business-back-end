@@ -170,18 +170,17 @@
         &.opening-time {
           input {
             width: calc((100% - #{$width} - 20px) / 2);
+            position: relative;
             &:last-of-type {
               margin-left: 20px;
-              position: relative;
-              overflow: visible;
               &::before {
                 content: "";
                 position: absolute;
                 top: 50%;
-                left: -16px;
+                left: 16px;
                 transform: translateY(-50%);
                 width: 12px;
-                height: 1px;
+                height: 5px;
                 background-color: #a7a7a7;
               }
             }
@@ -223,6 +222,68 @@
           padding-left: 20px;
           border-radius: 2px;
           @extend %ellipsis;
+        }
+        &.business-intro {
+          textarea {
+            display: inline-block;
+            vertical-align: middle;
+            min-width: 430px;
+            width: 430px;
+            max-width: calc(100% - #{$width});
+            min-height: 100px;
+            height: 150px;
+            max-height: 150px;
+            line-height: $height - 12;
+            border: 1px solid #bfbfbf;
+            font-size: $font-size;
+            color: #a7a7a7;
+            padding: 6px 20px;
+            border-radius: 2px;
+          }
+        }
+        &.cancel-confirm {
+          margin-left: $width;
+          margin-top: 50px;
+          font-size: 0;
+          button {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: $font-size;
+            color: #fff;
+            min-width: 100px;
+            height: 40px;
+            line-height: 40px;
+            padding-right: 32px;
+            padding-left: 32px;
+            text-align: center;
+            border-radius: 40px;
+            &:not(:last-of-type) {
+              margin-right: 40px;
+            }
+          }
+          .cancel {
+            background-color: #eaeff9;
+          }
+          .confirm {
+            background-color: #70e1bd;
+          }
+        }
+        &.business-license {
+          .business-license-file-upload {
+            display: inline-block;
+            vertical-align: middle;
+            width: calc(100% - #{$width});
+            position: relative;
+            .tips {
+              position: absolute;
+              bottom: 0;
+              left: 220px;
+              font-size: 12px;
+              height: 40px;
+              line-height: 40px;
+              color: #a7a7a7;
+            }
+          }
         }
       }
     }
