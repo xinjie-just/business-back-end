@@ -298,11 +298,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.clearfix:before, #header .navbar:before, #main .basic-info:before, #main .basic-info .row:before {
+.clearfix:before, #header .navbar:before, #main .basic-info:before, #main .basic-info .row:before, #main .basic-info .business-license-file-upload .placeholder-img-list:before, #main .basic-info .business-picture-file-upload .placeholder-img-list:before, #main .basic-info .logo-file-upload .placeholder-img-list:before {
   content: "";
   display: table;
 }
-.clearfix:after, #header .navbar:after, #main .basic-info:after, #main .basic-info .row:after {
+.clearfix:after, #header .navbar:after, #main .basic-info:after, #main .basic-info .row:after, #main .basic-info .business-license-file-upload .placeholder-img-list:after, #main .basic-info .business-picture-file-upload .placeholder-img-list:after, #main .basic-info .logo-file-upload .placeholder-img-list:after {
   content: "";
   display: table;
   clear: both;
@@ -331,7 +331,7 @@ label:hover {
   opacity: .8;
 }
 
-#header .custom-menu li.user-menu img, #main .basic-info .row > div input {
+#header .custom-menu li.user-menu img, #main .basic-info .row > div input, #main .basic-info .business-license-file-upload .placeholder-img-list li span, #main .basic-info .business-picture-file-upload .placeholder-img-list li span, #main .basic-info .logo-file-upload .placeholder-img-list li span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -398,9 +398,16 @@ label.error {
 }
 
 /*===首页===*/
-#header {
-  height: 64px;
+.content-wrapper {
   position: relative;
+  background-color: #37486b;
+}
+
+#header {
+  width: 100%;
+  height: 64px;
+  position: fixed;
+  z-index: 9999;
 }
 #header .logo {
   position: absolute;
@@ -476,14 +483,9 @@ label.error {
   font-size: 14px;
 }
 
-#main {
-  width: 100%;
-  min-height: calc(100% - 64px);
-  position: relative;
-}
-#main .sidebar-menu {
-  position: absolute;
-  top: 0;
+#sidebarMenu {
+  position: fixed;
+  top: 64px;
   left: 0;
   width: 180px;
   min-height: 100%;
@@ -493,10 +495,10 @@ label.error {
   padding-bottom: 8px;
   overflow-y: auto;
 }
-#main .sidebar-menu > li:not(:last-of-type) {
+#sidebarMenu .sidebar-menu-list > li:not(:last-of-type) {
   margin-bottom: 14px;
 }
-#main .sidebar-menu > li > a {
+#sidebarMenu .sidebar-menu-list > li > a {
   display: block;
   height: 30px;
   line-height: 30px;
@@ -505,13 +507,20 @@ label.error {
   padding-left: 40px;
   border-left: 3px solid transparent;
 }
-#main .sidebar-menu > li > a i {
+#sidebarMenu .sidebar-menu-list > li > a i {
   font-size: 16px;
   margin-right: 6px;
 }
-#main .sidebar-menu > li > a.active, #main .sidebar-menu > li > a:hover {
+#sidebarMenu .sidebar-menu-list > li > a.active, #sidebarMenu .sidebar-menu-list > li > a:hover {
   border-left-color: #fff;
   color: #fff;
+}
+
+#main {
+  width: 100%;
+  min-height: calc(100% - 64px);
+  position: relative;
+  top: 64px;
 }
 #main .content-wrapper {
   position: absolute;
@@ -646,24 +655,133 @@ label.error {
 #main .basic-info .row > div.cancel-confirm .confirm {
   background-color: #70e1bd;
 }
-#main .basic-info .row > div.business-license .business-license-file-upload {
+#main .basic-info .logo-img {
+  float: right;
+  width: 100px;
+}
+#main .basic-info .business-license-file-upload {
   display: inline-block;
   vertical-align: middle;
   width: calc(100% - 94px);
   position: relative;
+  height: 210px;
 }
-#main .basic-info .row > div.business-license .business-license-file-upload .tips {
+#main .basic-info .business-license-file-upload .tips {
   position: absolute;
   bottom: 0;
-  left: 220px;
+  left: 180px;
   font-size: 12px;
-  height: 40px;
-  line-height: 40px;
+  height: 24px;
+  line-height: 24px;
   color: #a7a7a7;
 }
-#main .basic-info .logo-img {
-  float: right;
+#main .basic-info .business-license-file-upload .placeholder-img-list {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#main .basic-info .business-license-file-upload .placeholder-img-list li {
+  float: left;
   width: 100px;
+  height: 100px;
+  background-color: #eaeff9;
+  padding: 26px 10px 0;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 2px;
+  margin: 9px;
+}
+#main .basic-info .business-license-file-upload .placeholder-img-list li i {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 32px;
+  color: #fff;
+}
+#main .basic-info .business-license-file-upload .placeholder-img-list li span {
+  font-size: 12px;
+  color: #fff;
+}
+#main .basic-info .business-picture-file-upload {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 94px);
+  position: relative;
+  height: 210px;
+}
+#main .basic-info .business-picture-file-upload .tips {
+  position: absolute;
+  bottom: 0;
+  left: 180px;
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  color: #a7a7a7;
+}
+#main .basic-info .business-picture-file-upload .placeholder-img-list {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#main .basic-info .business-picture-file-upload .placeholder-img-list li {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-color: #eaeff9;
+  padding: 26px 10px 0;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 2px;
+  margin: 9px;
+}
+#main .basic-info .business-picture-file-upload .placeholder-img-list li i {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 32px;
+  color: #fff;
+}
+#main .basic-info .business-picture-file-upload .placeholder-img-list li span {
+  font-size: 12px;
+  color: #fff;
+}
+#main .basic-info .logo-file-upload {
+  width: 120px;
+  position: relative;
+  right: 20px;
+  height: 210px;
+}
+#main .basic-info .logo-file-upload .tips {
+  position: absolute;
+  bottom: 0;
+  left: 180px;
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  color: #a7a7a7;
+}
+#main .basic-info .logo-file-upload .placeholder-img-list {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#main .basic-info .logo-file-upload .placeholder-img-list li {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-color: #eaeff9;
+  padding: 26px 10px 0;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 2px;
+  margin: 9px;
+}
+#main .basic-info .logo-file-upload .placeholder-img-list li span {
+  font-size: 16px;
+  color: #fff;
 }
 
 /*# sourceMappingURL=tuobei-business-back-end.css.map */

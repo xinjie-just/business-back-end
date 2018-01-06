@@ -1,13 +1,18 @@
 .fileUploadContent .box{
-    border: 1px dotted #bfbfbf;
-    height: 190px;
+    z-index: 999;
+    position: absolute;
+    height: 170px;
     width: 100%;
     margin-bottom: 10px;
+    border: 1px dotted #bfbfbf;
+}
+.fileUploadContent.logo-file-upload .box {
+    width: 120px;
 }
 .fileUploadContent .fileItem{
     border: solid thin #DDDDDD;
-    width: 130px;
-    height: 180px;
+    width: 110px;
+    height: 160px;
     display: inline-block;
     margin: 4px;
     text-align: center;
@@ -15,8 +20,8 @@
     vertical-align:top;
 }
 .fileUploadContent .fileItem .imgShow{
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     margin: 5px auto;
     text-align: center;
 }
@@ -77,28 +82,43 @@
     font-size: 12px;
 }
 .fileUploadContent .uploadBts {
+    position: absolute;
     text-align: left;
-    height: 40px
+    height: 24px;
+    line-height: 24px;
+    top: 186px;
 }
-.fileUploadContent .uploadBts>div{
+.fileUploadContent .uploadBts > div{
     float: left;
+    height: 24px;
+}
+.fileUploadContent .uploadBts > div:not(:last-of-type) {
     margin-right: 15px;
 }
+.fileUploadContent.logo-file-upload .uploadBts .uploadFileBt {
+    margin-right: 0;
+}
+.fileUploadContent.logo-file-upload .uploadBts .cleanFileBt {
+    display: none;
+}
+
 .fileUploadContent .uploadBts>div .selectFileBt{
-    border: none;
-    background-color: #0099FF;
-    color: #FFFFFF;
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 5px;
+    background-color: #70e1bd;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 2px;
     cursor: pointer;
+    width: 70px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
 }
 .fileUploadContent .uploadBts>div .selectFileBt:hover{
-    color: #DDDDDD;
+    background-color: #81f2ce;
 }
 .fileUploadContent .uploadBts>div i{
-    font-size: 35px;
-    color: #0099FF;
+    font-size: 24px;
+    color: #70e1bd;
     cursor: pointer;
 
 }
