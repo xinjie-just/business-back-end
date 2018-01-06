@@ -195,7 +195,7 @@
             }
           }
         }
-        label {
+        label:not(.error) {
           display: inline-block;
           vertical-align: middle;
           font-size: 14px;
@@ -217,6 +217,14 @@
               transform: translateY(calc(-50% + 2px));
             }
           }
+        }
+        label.error {
+          display: block;
+          font-size: 12px;
+          height: 24px;
+          line-height: 24px;
+          margin-left: $width;
+
         }
         input {
           display: inline-block;

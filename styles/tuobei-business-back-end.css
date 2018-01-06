@@ -578,7 +578,7 @@ label.error {
   height: 5px;
   background-color: #a7a7a7;
 }
-#main .basic-info .row > div label {
+#main .basic-info .row > div label:not(.error) {
   display: inline-block;
   vertical-align: middle;
   font-size: 14px;
@@ -590,7 +590,7 @@ label.error {
   text-align: right;
   color: #505050;
 }
-#main .basic-info .row > div label.required:after {
+#main .basic-info .row > div label:not(.error).required:after {
   content: "*";
   position: absolute;
   top: 50%;
@@ -598,6 +598,13 @@ label.error {
   font-size: 14px;
   color: #f00;
   transform: translateY(calc(-50% + 2px));
+}
+#main .basic-info .row > div label.error {
+  display: block;
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-left: 94px;
 }
 #main .basic-info .row > div input {
   display: inline-block;

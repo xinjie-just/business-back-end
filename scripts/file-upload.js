@@ -71,7 +71,7 @@ var uploadTools = {
             $("#"+uploadId+" .uploadBts .uploadFileBt").on("click",function(){
                 uploadEvent.uploadFileEvent(opt);
             });
-            $("#"+uploadId+" .uploadBts .uploadFileBt i").css("color","#0099FF");
+            $("#"+uploadId+" .uploadBts .uploadFileBt i").css("color","#70e1bd");
         }
         if(opt.selfUploadBtId!=null&&opt.selfUploadBtId!=""){
             if(uploadTools.foundExitById(opt.selfUploadBtId)){
@@ -102,7 +102,7 @@ var uploadTools = {
             $("#"+uploadId+" .uploadBts .cleanFileBt").on("click",function(){
                 uploadEvent.cleanFileEvent(opt);
             });
-            $("#"+uploadId+" .uploadBts .cleanFileBt i").css("color","#0099FF");
+            $("#"+uploadId+" .uploadBts .cleanFileBt i").css("color","#70e1bd");
         }
     },
     /**
@@ -155,17 +155,17 @@ var uploadTools = {
         btsStr += "<div class='uploadBts'>";
 
         btsStr += "<div>";
-        btsStr += "<div class='selectFileBt'>上传图片</div>";
+        btsStr += "<div class='selectFileBt' title='上传图片'>上传图片</div>";
         btsStr += "</div>";
         //上传按钮
         if(!opt.isHiddenUploadBt){
-            btsStr += "<div class='uploadFileBt'>";
+            btsStr += "<div class='uploadFileBt' title='提交图片'>";
             btsStr += "<i class='iconfont icon-shangchuan'></i>";
             btsStr += " </div>";
         }
         //清理按钮
         if(!opt.isHiddenCleanBt){
-            btsStr += "<div class='cleanFileBt'>";
+            btsStr += "<div class='cleanFileBt' title='清除图片'>";
             btsStr += "<i class='iconfont icon-qingchu'></i>";
             btsStr += " </div>";
         }
