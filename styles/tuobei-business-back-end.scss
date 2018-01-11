@@ -879,4 +879,132 @@
       }
     }
   }
+  .card-management-content {
+    $item-height: 90px;
+    $item-width: 250px;
+    position: relative;
+    padding-bottom: 200px;
+    .card-list {
+      @extend .clearfix;
+      li {
+        z-index: 9;
+        position: relative;
+        float: left;
+        width: 250px;
+        height: 90px;
+        border-radius: 6px;
+        margin: 15px 10px;
+        padding-top: 10px;
+        padding-left: 80px;
+        color: #fff;
+        cursor: pointer;
+        &.selected,
+        &.active {
+          &::before {
+            z-index: 10;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            background: rgba(0, 0, 0, .5) url("../imgs/selected.png") no-repeat center / 30px;
+          }
+        }
+        &:nth-of-type(3n + 1) {
+          background-color: #d81e06;
+          &:hover {
+            background-color: darken(#d81e06, 8%);
+          }
+          &:focus {
+            background-color: darken(#d81e06, 14%);
+          }
+        }
+        &:nth-of-type(3n + 2) {
+          background-color: #13227a;
+          &:hover {
+            background-color: darken(#13227a, 8%);
+          }
+          &:focus {
+            background-color: darken(#13227a, 14%);
+          }
+        }
+        &:nth-of-type(3n + 3) {
+          background-color: #009174;
+          &:hover {
+            background-color: darken(#009174, 8%);
+          }
+          &:focus {
+            background-color: darken(#009174, 14%);
+          }
+        }
+        .bank-name {
+          font-size: $font-size;
+          line-height: 26px;
+        }
+        .card-type {
+          font-size: 12px;
+          line-height: 22px;
+        }
+        .card-number {
+          font-size: 14px;
+          line-height: 24px;
+        }
+        i {
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          font-size: 40px;
+          transform: translateY(-50%);
+          color: #fff;
+        }
+      }
+      .add-card-btn {
+        position: relative;
+        display: block;
+        float: left;
+        height: $item-height;
+        width: $item-width;
+        border: 2px dashed #a7a7a7;
+        padding-top: 50px;
+        text-align: center;
+        border-radius: 6px;
+        margin: 15px 10px;
+        background-color: transparent;
+        &:hover {
+          background-color: darken(#fff, 8%);
+        }
+        &:focus {
+          background-color: darken(#fff, 14%);
+        }
+        i {
+          position: absolute;
+          top: 14px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 34px;
+          font-weight: 500;
+          color: #eaeff9;
+        }
+      }
+    }
+    .remove-btn {
+      position: absolute;
+      bottom: 30px;
+      right: 15px;
+      display: block;
+      padding: 10px 38px;
+      border-radius: 40px;
+      font-size: $font-size;
+      color: #fff;
+      background-color: $btn-bg-color;
+      &:hover {
+        background-color: darken($btn-bg-color, 8%);
+      }
+      &:focus {
+        background-color: darken($btn-bg-color, 14%);
+      }
+    }
+  }
 }

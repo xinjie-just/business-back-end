@@ -7,7 +7,7 @@
         <title>银行卡管理 | 拓贝商家后台</title>
         <meta name="keywords" content="">
         <meta name="description" content="">
-        <link rel="stylesheet" href="//at.alicdn.com/t/font_531074_nocucw8xwkxrbe29.css">
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_531074_coetjeii8k9be29.css">
         <link rel="stylesheet" href="styles/tuobei-business-back-end.css">
     </head>
     <body>
@@ -58,29 +58,32 @@
             <main id="main" role="main">
                 <div class="content-wrapper">
                     <nav class="withdraw-nav">
-                        <a href="#" class="withdraw-link active">余额提现</a>
-                        <a href="#" class="withdraw-link">银行卡管理</a>
+                        <a href="#" class="withdraw-link">余额提现</a>
+                        <a href="#" class="withdraw-link active">银行卡管理</a>
                     </nav>
-                    <div class="withdraw-content">
+                    <div class="withdraw-content card-management-content">
                         <ul class="card-list">
                             <!-- 建设银行 ccb，交通银行 bocom，工商银行 icbc，中国银行 boc，农业银行 abc -->
-                            <li class="card-item icbc">
+                            <li class="card-item icbc" title="选中删除">
+                                <i class="iconfont icon-icbc"></i>
                                 <div class="bank-name">中国工商银行</div>
                                 <div class="card-type">储蓄卡</div>
                                 <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
                             </li>
-                            <li class="card-item ccb">
+                            <li class="card-item ccb" title="选中删除">
+                                <i class="iconfont icon-ccb"></i>
                                 <div class="bank-name">中国建设银行</div>
                                 <div class="card-type">储蓄卡</div>
                                 <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
                             </li>
-                            <li class="card-item abc">
+                            <li class="card-item abc" title="选中删除">
+                                <i class="iconfont icon-abc"></i>
                                 <div class="bank-name">中国农业银行</div>
                                 <div class="card-type">储蓄卡</div>
                                 <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
                             </li>
+                            <button class="add-card-btn" title="新添加银行卡"><i class="iconfont icon-add"></i>新添加银行卡</button>
                         </ul>
-                        <button class="add-card-btn">新添加银行卡</button>
                         <button class="remove-btn" type="button" title="删除这张银行卡">删除</button>
                     </div>
                 </div>
@@ -91,7 +94,11 @@
         <script src="scripts/jquery.min.js"></script>
         <script src="scripts/tuobei-business-back-end.js"></script>
         <script>
-
+            $(function () {
+                $(".card-item").click(function () {
+                    $(this).addClass("selected").siblings("li").removeClass("selected");
+                });
+            });
         </script>
     </body>
 </html>

@@ -299,11 +299,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.clearfix:before, #header .navbar:before, .basic-info:before, .basic-info .row:before, .basic-info .business-license-file-upload .placeholder-img-list:before, .basic-info .business-picture-file-upload .placeholder-img-list:before, .basic-info .logo-file-upload .placeholder-img-list:before, .handle-list:before, .handle-list .condition-list:before, .content-wrapper .withdraw-form > div .money-wrapper:before, .content-wrapper .withdraw-form > div.handle:before {
+.clearfix:before, #header .navbar:before, .basic-info:before, .basic-info .row:before, .basic-info .business-license-file-upload .placeholder-img-list:before, .basic-info .business-picture-file-upload .placeholder-img-list:before, .basic-info .logo-file-upload .placeholder-img-list:before, .handle-list:before, .handle-list .condition-list:before, .content-wrapper .withdraw-form > div .money-wrapper:before, .content-wrapper .withdraw-form > div.handle:before, .content-wrapper .card-management-content .card-list:before {
   content: "";
   display: table;
 }
-.clearfix:after, #header .navbar:after, .basic-info:after, .basic-info .row:after, .basic-info .business-license-file-upload .placeholder-img-list:after, .basic-info .business-picture-file-upload .placeholder-img-list:after, .basic-info .logo-file-upload .placeholder-img-list:after, .handle-list:after, .handle-list .condition-list:after, .content-wrapper .withdraw-form > div .money-wrapper:after, .content-wrapper .withdraw-form > div.handle:after {
+.clearfix:after, #header .navbar:after, .basic-info:after, .basic-info .row:after, .basic-info .business-license-file-upload .placeholder-img-list:after, .basic-info .business-picture-file-upload .placeholder-img-list:after, .basic-info .logo-file-upload .placeholder-img-list:after, .handle-list:after, .handle-list .condition-list:after, .content-wrapper .withdraw-form > div .money-wrapper:after, .content-wrapper .withdraw-form > div.handle:after, .content-wrapper .card-management-content .card-list:after {
   content: "";
   display: table;
   clear: both;
@@ -1213,6 +1213,126 @@ label.error {
   background-color: #4edaad;
 }
 .content-wrapper .withdraw-form > div.handle button.confirm:focus {
+  background-color: #35d5a2;
+}
+.content-wrapper .card-management-content {
+  position: relative;
+  padding-bottom: 200px;
+}
+.content-wrapper .card-management-content .card-list li {
+  z-index: 9;
+  position: relative;
+  float: left;
+  width: 250px;
+  height: 90px;
+  border-radius: 6px;
+  margin: 15px 10px;
+  padding-top: 10px;
+  padding-left: 80px;
+  color: #fff;
+  cursor: pointer;
+}
+.content-wrapper .card-management-content .card-list li.selected::before, .content-wrapper .card-management-content .card-list li.active::before {
+  z-index: 10;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.5) url("../imgs/selected.png") no-repeat center/30px;
+}
+.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 1) {
+  background-color: #d81e06;
+}
+.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 1):hover {
+  background-color: #b01805;
+}
+.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 1):focus {
+  background-color: #931404;
+}
+.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 2) {
+  background-color: #13227a;
+}
+.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 2):hover {
+  background-color: #0e1857;
+}
+.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 2):focus {
+  background-color: #09113c;
+}
+.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 3) {
+  background-color: #009174;
+}
+.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 3):hover {
+  background-color: #006853;
+}
+.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 3):focus {
+  background-color: #004a3b;
+}
+.content-wrapper .card-management-content .card-list li .bank-name {
+  font-size: 14px;
+  line-height: 26px;
+}
+.content-wrapper .card-management-content .card-list li .card-type {
+  font-size: 12px;
+  line-height: 22px;
+}
+.content-wrapper .card-management-content .card-list li .card-number {
+  font-size: 14px;
+  line-height: 24px;
+}
+.content-wrapper .card-management-content .card-list li i {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  font-size: 40px;
+  transform: translateY(-50%);
+  color: #fff;
+}
+.content-wrapper .card-management-content .card-list .add-card-btn {
+  position: relative;
+  display: block;
+  float: left;
+  height: 90px;
+  width: 250px;
+  border: 2px dashed #a7a7a7;
+  padding-top: 50px;
+  text-align: center;
+  border-radius: 6px;
+  margin: 15px 10px;
+  background-color: transparent;
+}
+.content-wrapper .card-management-content .card-list .add-card-btn:hover {
+  background-color: #ebebeb;
+}
+.content-wrapper .card-management-content .card-list .add-card-btn:focus {
+  background-color: #dbdbdb;
+}
+.content-wrapper .card-management-content .card-list .add-card-btn i {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 34px;
+  font-weight: 500;
+  color: #eaeff9;
+}
+.content-wrapper .card-management-content .remove-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 15px;
+  display: block;
+  padding: 10px 38px;
+  border-radius: 40px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #70e1bd;
+}
+.content-wrapper .card-management-content .remove-btn:hover {
+  background-color: #4edaad;
+}
+.content-wrapper .card-management-content .remove-btn:focus {
   background-color: #35d5a2;
 }
 
