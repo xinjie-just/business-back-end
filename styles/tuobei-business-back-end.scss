@@ -72,7 +72,7 @@
       &.user-menu {
         font-size: 0;
         span {
-          font-size: 14px;
+          font-size: $font-size;
           display: inline-block;
           vertical-align: middle;
         }
@@ -84,7 +84,7 @@
           height: 40px;
           line-height: 40px;
           border-radius: 50%;
-          font-size: 14px;
+          font-size: $font-size;
           border: 1px solid darken($main-color, 8%);
           @extend %ellipsis;
         }
@@ -202,7 +202,7 @@
       label:not(.error) {
         display: inline-block;
         vertical-align: middle;
-        font-size: 14px;
+        font-size: $font-size;
         width: $width;
         height: $height;
         line-height: $height;
@@ -286,7 +286,7 @@
           background-color: #eaeff9;
         }
         .confirm {
-          background-color: #70e1bd;
+          background-color: $btn-bg-color;
         }
       }
     }
@@ -446,14 +446,14 @@
         display: inline-block;
         vertical-align: middle;
         margin-right: 10px;
-        font-size: 14px;
+        font-size: $font-size;
         color: $text-color;
       }
       input {
         display: inline-block;
         vertical-align: middle;
         font-size: 12px;
-        color: #2b2b2b;
+        color: $text-info-color;
         border: 1px solid #bfbfbf;
         height: $height;
         line-height: $height - 2;
@@ -495,12 +495,12 @@
         }
       }
       &.export {
-        background-color: #70e1bd;
+        background-color: $btn-bg-color;
         &:hover {
-          background-color: darken(#70e1bd, 8%);
+          background-color: darken($btn-bg-color, 8%);
         }
         &:focus {
-          background-color: darken(#70e1bd, 14%);
+          background-color: darken($btn-bg-color, 14%);
         }
       }
     }
@@ -522,7 +522,7 @@
         th {
           padding-right: 1em;
           padding-left: 1em;
-          font-size: 14px;
+          font-size: $font-size;
           color: #fff;
           @extend %ellipsis;
         }
@@ -537,7 +537,7 @@
           padding-right: 1em;
           padding-left: 1em;
           font-size: 12px;
-          color: #2b2b2b;
+          color: $text-info-color;
           @extend %ellipsis;
           &.order-status {
             padding-left: calc(1em + 18px);
@@ -679,6 +679,203 @@
         cursor: not-allowed;
         background-color: #fff;
         border-color: #ddd;
+      }
+    }
+  }
+}
+
+/*===提现管理===*/
+/*余额提现*/
+.content-wrapper {
+  $width: 200px;
+  $height: 40px;
+  .withdraw-nav {
+    width: $width;
+    float: left;
+    background-color: #fff;
+    a {
+      display: block;
+      width: 100%;
+      height: $height;
+      line-height: $height;
+      text-align: center;
+      color: $text-info-color;
+      font-size: $font-size;
+      &.active,
+      &:hover {
+        background-color: $main-color;
+        color: #fff;
+      }
+    }
+  }
+  .withdraw-content {
+    width: calc(100% - #{$width} - 20px);
+    float: right;
+    background-color: #fff;
+    padding: 15px 15px 120px;
+    .my-count {
+      font-size: 14px;
+      color: $text-info-color;
+      margin: 60px auto 0;
+      text-align: center;
+      line-height: 1.8em;
+    }
+    .value {
+      margin: 30px auto 0;
+      font-size: 30px;
+      color: $text-info-color;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      span {
+        font-size: 50px;
+        margin-left: 4px;
+      }
+    }
+    .withdraw {
+      text-align: center;
+      margin: 70px auto 0;
+      a {
+        display: inline-block;
+        padding: 10px 38px;
+        border-radius: 40px;
+        font-size: $font-size;
+        color: #fff;
+        background-color: $btn-bg-color;
+        &:hover {
+          background-color: darken($btn-bg-color, 8%);
+        }
+        &:focus {
+          background-color: darken($btn-bg-color, 14%);
+        }
+      }
+    }
+  }
+  .withdraw-form {
+    width: calc(100% - #{$width} - 20px);
+    float: right;
+    background-color: #fff;
+    padding: 24px 80px 80px;
+    > div {
+      color: $text-info-color;
+      font-size: 12px;
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        height: 36px;
+        line-height: 36px;
+        font-size: $font-size;
+        color: $text-info-color;
+      }
+      &.card-select {
+        select {
+          min-width: 240px;
+          height: 36px;
+          line-height: 36px;
+          padding-left: 20px;
+          padding-right: 10px;
+          border: 1px solid #bfbfbf;
+          color: #a7a7a7;
+          font-size: $font-size;
+          cursor: pointer;
+          &:focus {
+            outline: none;
+          }
+          option {
+            height: 30px;
+            line-height: 30px;
+            padding-right: 20px;
+            padding-left: 20px;
+            color: $text-info-color;
+            font-size: $font-size;
+            cursor: pointer;
+          }
+        }
+      }
+      .money-wrapper {
+        $height: 60px;
+        min-width: 340px;
+        width: 42%;
+        height: $height;
+        line-height: $height - 2;
+        border: 1px solid #bfbfbf;
+        @extend .clearfix;
+        .currency {
+          float: left;
+          display: block;
+          width: $height - 2;
+          height: $height - 2;
+          line-height: $height - 2;
+          text-align: center;
+          font-size: 30px;
+          font-weight: bold;
+          color: $text-info-color;
+        }
+        .my-money {
+          float: left;
+          display: block;
+          width: calc(100% - #{$height} - 96px);
+          font-size: $font-size + 2;
+          font-weight: 500;
+          color: $text-info-color;
+          &:focus {
+            border: none;
+            outline: none;
+          }
+        }
+        .all-money {
+          display: block;
+          float: right;
+          width: 96px;
+          height: $height - 2;
+          line-height: $height - 2;
+          text-align: center;
+          background-color: transparent;
+          color: $btn-bg-color;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+      &.tips {
+        line-height: 1.6;
+        span {
+          color: #ff1616;
+        }
+      }
+      &.handle {
+        margin-top: 40px;
+        @extend .clearfix;
+        button {
+          float: left;
+          display: block;
+          padding: 10px 38px;
+          border-radius: 40px;
+          font-size: $font-size;
+          color: #fff;
+          &:not(:last-of-type) {
+            margin-right: 40px;
+          }
+          &.cancel {
+            background-color: #eaeff9;
+            &:hover {
+              background-color: darken(#eaeff9, 8%);
+            }
+            &:focus {
+              background-color: darken(#eaeff9, 14%);
+            }
+          }
+          &.confirm {
+            background-color: $btn-bg-color;
+            &:hover {
+              background-color: darken($btn-bg-color, 8%);
+            }
+            &:focus {
+              background-color: darken($btn-bg-color, 14%);
+            }
+          }
+        }
       }
     }
   }

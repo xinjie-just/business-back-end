@@ -299,11 +299,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.clearfix:before, #header .navbar:before, .basic-info:before, .basic-info .row:before, .basic-info .business-license-file-upload .placeholder-img-list:before, .basic-info .business-picture-file-upload .placeholder-img-list:before, .basic-info .logo-file-upload .placeholder-img-list:before, .handle-list:before, .handle-list .condition-list:before {
+.clearfix:before, #header .navbar:before, .basic-info:before, .basic-info .row:before, .basic-info .business-license-file-upload .placeholder-img-list:before, .basic-info .business-picture-file-upload .placeholder-img-list:before, .basic-info .logo-file-upload .placeholder-img-list:before, .handle-list:before, .handle-list .condition-list:before, .content-wrapper .withdraw-form > div .money-wrapper:before, .content-wrapper .withdraw-form > div.handle:before {
   content: "";
   display: table;
 }
-.clearfix:after, #header .navbar:after, .basic-info:after, .basic-info .row:after, .basic-info .business-license-file-upload .placeholder-img-list:after, .basic-info .business-picture-file-upload .placeholder-img-list:after, .basic-info .logo-file-upload .placeholder-img-list:after, .handle-list:after, .handle-list .condition-list:after {
+.clearfix:after, #header .navbar:after, .basic-info:after, .basic-info .row:after, .basic-info .business-license-file-upload .placeholder-img-list:after, .basic-info .business-picture-file-upload .placeholder-img-list:after, .basic-info .logo-file-upload .placeholder-img-list:after, .handle-list:after, .handle-list .condition-list:after, .content-wrapper .withdraw-form > div .money-wrapper:after, .content-wrapper .withdraw-form > div.handle:after {
   content: "";
   display: table;
   clear: both;
@@ -1027,6 +1027,193 @@ label.error {
   cursor: not-allowed;
   background-color: #fff;
   border-color: #ddd;
+}
+
+/*===提现管理===*/
+/*余额提现*/
+.content-wrapper .withdraw-nav {
+  width: 200px;
+  float: left;
+  background-color: #fff;
+}
+.content-wrapper .withdraw-nav a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #2b2b2b;
+  font-size: 14px;
+}
+.content-wrapper .withdraw-nav a.active, .content-wrapper .withdraw-nav a:hover {
+  background-color: #5974c8;
+  color: #fff;
+}
+.content-wrapper .withdraw-content {
+  width: calc(100% - 200px - 20px);
+  float: right;
+  background-color: #fff;
+  padding: 15px 15px 120px;
+}
+.content-wrapper .withdraw-content .my-count {
+  font-size: 14px;
+  color: #2b2b2b;
+  margin: 60px auto 0;
+  text-align: center;
+  line-height: 1.8em;
+}
+.content-wrapper .withdraw-content .value {
+  margin: 30px auto 0;
+  font-size: 30px;
+  color: #2b2b2b;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.content-wrapper .withdraw-content .value span {
+  font-size: 50px;
+  margin-left: 4px;
+}
+.content-wrapper .withdraw-content .withdraw {
+  text-align: center;
+  margin: 70px auto 0;
+}
+.content-wrapper .withdraw-content .withdraw a {
+  display: inline-block;
+  padding: 10px 38px;
+  border-radius: 40px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #70e1bd;
+}
+.content-wrapper .withdraw-content .withdraw a:hover {
+  background-color: #4edaad;
+}
+.content-wrapper .withdraw-content .withdraw a:focus {
+  background-color: #35d5a2;
+}
+.content-wrapper .withdraw-form {
+  width: calc(100% - 200px - 20px);
+  float: right;
+  background-color: #fff;
+  padding: 24px 80px 80px;
+}
+.content-wrapper .withdraw-form > div {
+  color: #2b2b2b;
+  font-size: 12px;
+}
+.content-wrapper .withdraw-form > div:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.content-wrapper .withdraw-form > div label {
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #2b2b2b;
+}
+.content-wrapper .withdraw-form > div.card-select select {
+  min-width: 240px;
+  height: 36px;
+  line-height: 36px;
+  padding-left: 20px;
+  padding-right: 10px;
+  border: 1px solid #bfbfbf;
+  color: #a7a7a7;
+  font-size: 14px;
+  cursor: pointer;
+}
+.content-wrapper .withdraw-form > div.card-select select:focus {
+  outline: none;
+}
+.content-wrapper .withdraw-form > div.card-select select option {
+  height: 30px;
+  line-height: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #2b2b2b;
+  font-size: 14px;
+  cursor: pointer;
+}
+.content-wrapper .withdraw-form > div .money-wrapper {
+  min-width: 340px;
+  width: 42%;
+  height: 60px;
+  line-height: 58px;
+  border: 1px solid #bfbfbf;
+}
+.content-wrapper .withdraw-form > div .money-wrapper .currency {
+  float: left;
+  display: block;
+  width: 58px;
+  height: 58px;
+  line-height: 58px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+.content-wrapper .withdraw-form > div .money-wrapper .my-money {
+  float: left;
+  display: block;
+  width: calc(100% - 60px - 96px);
+  font-size: 16px;
+  font-weight: 500;
+  color: #2b2b2b;
+}
+.content-wrapper .withdraw-form > div .money-wrapper .my-money:focus {
+  border: none;
+  outline: none;
+}
+.content-wrapper .withdraw-form > div .money-wrapper .all-money {
+  display: block;
+  float: right;
+  width: 96px;
+  height: 58px;
+  line-height: 58px;
+  text-align: center;
+  background-color: transparent;
+  color: #70e1bd;
+  font-size: 14px;
+  cursor: pointer;
+}
+.content-wrapper .withdraw-form > div.tips {
+  line-height: 1.6;
+}
+.content-wrapper .withdraw-form > div.tips span {
+  color: #ff1616;
+}
+.content-wrapper .withdraw-form > div.handle {
+  margin-top: 40px;
+}
+.content-wrapper .withdraw-form > div.handle button {
+  float: left;
+  display: block;
+  padding: 10px 38px;
+  border-radius: 40px;
+  font-size: 14px;
+  color: #fff;
+}
+.content-wrapper .withdraw-form > div.handle button:not(:last-of-type) {
+  margin-right: 40px;
+}
+.content-wrapper .withdraw-form > div.handle button.cancel {
+  background-color: #eaeff9;
+}
+.content-wrapper .withdraw-form > div.handle button.cancel:hover {
+  background-color: #cad7f0;
+}
+.content-wrapper .withdraw-form > div.handle button.cancel:focus {
+  background-color: #b2c5e9;
+}
+.content-wrapper .withdraw-form > div.handle button.confirm {
+  background-color: #70e1bd;
+}
+.content-wrapper .withdraw-form > div.handle button.confirm:hover {
+  background-color: #4edaad;
+}
+.content-wrapper .withdraw-form > div.handle button.confirm:focus {
+  background-color: #35d5a2;
 }
 
 /*# sourceMappingURL=tuobei-business-back-end.css.map */

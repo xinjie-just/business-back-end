@@ -3,6 +3,9 @@
 // 文本主要颜色
 $text-color: #505050;
 
+// 文本强调颜色
+$text-info-color: #2b2b2b;
+
 // 文本强调颜色，强调背景颜色，header部分背景颜色
 $main-color: #5974c8;
 
@@ -14,6 +17,15 @@ $menu-bg-color: #37486b;
 
 // logo背景颜色
 $logo-bg-color: #506bbf;
+
+// 按钮默认背景颜色
+$btn-bg-color: #70e1bd;
+
+// 按钮鼠标悬浮背景颜色
+$btn-hover-bg-color: #4edaad;
+
+// 按钮鼠标点击背景颜色
+$btn-focus-bg-color: #35d5a2;
 
 // 文本字号
 $font-size: 14px;
