@@ -4,16 +4,14 @@
 @import "reboot";
 
 /*===首页===*/
-.content-wrapper {
-  position: relative;
-  background-color: $menu-bg-color;
-}
 #header {
+  z-index: 999;
+  position: fixed;
   width: 100%;
   height: $header-height;
-  position: fixed;
-  z-index: 9999;
+  top: 0;
   .logo {
+    z-index: 1000;
     position: absolute;
     top: 0;
     left: 0;
@@ -24,11 +22,20 @@
     background-color: $logo-bg-color;
     color: #fff;
     font-size: $font-size;
+    font-weight: normal;
     text-align: center;
     letter-spacing: .2em;
-    padding-left: .2em;
+    a {
+      display: block;
+      height: 100%;
+      color: inherit;
+      &:hover {
+        background-color: darken($logo-bg-color, 8%);
+      }
+    }
   }
   .navbar {
+    z-index: 1000;
     position: absolute;
     top: 0;
     right: 0;
@@ -67,6 +74,9 @@
           padding-right: 20px;
           padding-left: 20px;
           color: #fff;
+          &:hover {
+            background-color: darken($main-color, 8%);
+          }
         }
       }
       &.user-menu {
@@ -94,16 +104,17 @@
 }
 #sidebarMenu {
   position: fixed;
-  top: $header-height;
+  top: 0;
   left: 0;
   width: $sidebar-menu-width;
-  min-height: 100%;
+  height: 100%;
   background-color: $menu-bg-color;
   color: #5f79b0;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: $header-height;
   overflow-y: auto;
   .sidebar-menu-list {
+    padding-top: 8px;
+    padding-bottom: 8px;
     > li {
       $height: 30px;
       &:not(:last-of-type) {
@@ -131,19 +142,31 @@
   }
 }
 #main {
-  width:100%;
-  min-height: calc(100% - #{$header-height});
-  position: relative;
-  top: $header-height;
+  display: block;
+  height: 100%;
+  margin-left: $sidebar-menu-width;
+  padding: calc(30px + #{$header-height}) 30px calc(30px + #{$footer-height});
+  background-color: $main-content-bg-color;
   .content-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: calc(100% - #{$sidebar-menu-width});
-    min-height: 100%;
-    padding: 30px;
-    background-color: $main-content-bg-color;
+    width: 100%;
+    height: 100%;
   }
+}
+#footer {
+  z-index: 999;
+  display: block;
+  width: calc(100% - #{$sidebar-menu-width});
+  height: $footer-height;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  line-height: 40px;
+  font-size: $font-size;
+  color: $text-info-color;
+  padding-right: 30px;
+  padding-left: 30px;
+  @extend %ellipsis;
 }
 
 /*===基本信息===*/
@@ -293,9 +316,10 @@
   }
   .logo-img {
     float: right;
-    width: 100px;
+    width: 120px;
   }
   .business-license-file-upload {
+    z-index: 99;
     display: inline-block;
     vertical-align: middle;
     width: calc(100% - #{$width});
@@ -342,6 +366,7 @@
     }
   }
   .business-picture-file-upload {
+    z-index: 99;
     display: inline-block;
     vertical-align: middle;
     width: calc(100% - #{$width});
@@ -388,9 +413,9 @@
     }
   }
   .logo-file-upload {
+    z-index: 99;
     width: 120px;
     position: relative;
-    right: 20px;
     height: 210px;
     .tips {
       position: absolute;
@@ -430,7 +455,8 @@
 /*===消费记录===*/
 .handle-list {
   $height: 30px;
-  padding: 22px 10px;
+  $mt: 5px;
+  padding: 17px 10px;
   background-color: #fff;
   @extend .clearfix;
   .condition-list {
@@ -438,6 +464,8 @@
     @extend .clearfix;
     > div {
       float: left;
+      margin-top: $mt;
+      margin-bottom: $mt;
       &:not(:last-of-type) {
         margin-right: 10px;
         font-size: 0;
@@ -460,17 +488,20 @@
         padding-right: 1em;
         padding-left: 1em;
         @extend %ellipsis;
+        &:focus {
+          border-color: darken(#bfbfbf, 80%);
+          outline: none;
+        }
       }
     }
     @media (max-width: 1380px) {
       width: calc(100% - 140px);
-      > div {
-        margin-bottom: 10px;
-      }
     }
   }
   .handle-method {
     float: right;
+    margin-top: $mt;
+    margin-bottom: $mt;
     button {
       display: inline-block;
       vertical-align: middle;
@@ -836,6 +867,12 @@
           color: $btn-bg-color;
           font-size: 14px;
           cursor: pointer;
+          &:hover {
+            background-color: #efefef;
+          }
+          &:focus {
+            background-color: #eaeaea;
+          }
         }
       }
       &.tips {

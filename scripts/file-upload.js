@@ -124,7 +124,7 @@ var uploadTools = {
      * @param isImgUrl 如果事文件时的文件地址默认为null
      */
     "getShowFileType":function(isImg,fileType,fileName,isImgUrl,fileCodeId){
-        var showTypeStr="<div class='fileType'>"+fileType+"</div> <i class='iconfont icon-wenjian'></i>";//默认显示类型
+        var showTypeStr="<div class='fileType'>"+fileType+"</div> <i class='iconfont icon-file'></i>";//默认显示类型
         if(isImg){
             if(isImgUrl!=null&&isImgUrl!="null"&&isImgUrl!=""){//图片显示类型
                 showTypeStr = "<img src='"+isImgUrl+"'/>";
@@ -136,7 +136,7 @@ var uploadTools = {
         modelStr+=showTypeStr;
         modelStr+=" </div>";
         modelStr+="<div class='status'>";
-        modelStr+="<i class='iconfont icon-shanchu'></i>";
+        modelStr+="<i class='iconfont icon-remove'></i>";
         modelStr+="</div>";
         modelStr+=" <div class='fileName'>";
         modelStr+=fileName;
@@ -160,13 +160,13 @@ var uploadTools = {
         //上传按钮
         if(!opt.isHiddenUploadBt){
             btsStr += "<div class='uploadFileBt' title='提交图片'>";
-            btsStr += "<i class='iconfont icon-shangchuan'></i>";
+            btsStr += "<i class='iconfont icon-upload'></i>";
             btsStr += " </div>";
         }
         //清理按钮
         if(!opt.isHiddenCleanBt){
             btsStr += "<div class='cleanFileBt' title='清除图片'>";
-            btsStr += "<i class='iconfont icon-qingchu'></i>";
+            btsStr += "<i class='iconfont icon-clear'></i>";
             btsStr += " </div>";
         }
         btsStr += "</div>";
@@ -324,7 +324,7 @@ var uploadTools = {
     "uploadError":function(opt){
         var uploadId = opt.uploadId;
 
-        $("#"+uploadId+" .box .fileItem .status>i").addClass("iconfont icon-cha");
+        $("#"+uploadId+" .box .fileItem .status>i").addClass("iconfont icon-error");
         var progressBar = $("#"+uploadId+" .subberProgress .progress>div");
         progressBar.css("width","0%");
         progressBar.html("0%");
@@ -336,7 +336,7 @@ var uploadTools = {
     "uploadSuccess":function(opt){
         var uploadId = opt.uploadId;
         $("#"+uploadId+" .box .fileItem .status>i").off();
-        $("#"+uploadId+" .box .fileItem .status>i").addClass("iconfont icon-gou");
+        $("#"+uploadId+" .box .fileItem .status>i").addClass("iconfont icon-right");
         var progressBar = $("#"+uploadId+" .subberProgress .progress>div");
         progressBar.css("width","0%");
         progressBar.html("0%");

@@ -11,156 +11,157 @@
         <link rel="stylesheet" href="styles/tuobei-business-back-end.css">
     </head>
     <body>
-        <div class="content-wrapper">
-            <header id="header" role="banner">
-                <a href="#" class="logo">拓贝商家后台管理系统</a>
-                <nav class="navbar">
-                    <ul class="custom-menu">
-                        <li class="sign-out">
-                            <a href="#" title="退出">退出</a>
-                        </li>
-                        <li class="user-menu">
-                            <img src="imgs/user-img.jpg" class="user-image" alt="User Image">
-                            <span class="user-nickname">Hello,韩雪梅</span>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <aside class="sidebar-menu" id="sidebarMenu">
-                <ul class="sidebar-menu-list" id="sidebarMenuList" data-widget="tree">
-                    <li>
-                        <a href="" title="基本信息">
-                            <i class="iconfont icon-basic-info"></i>基本信息
-                        </a>
+        <header id="header" role="banner">
+            <!-- 首页logo不含 <a> 标签，其他页面含有 -->
+            <h1 class="logo">
+                <a href="#" class="logo-link" title="回到首页">拓贝商家后台管理系统</a>
+            </h1>
+            <nav class="navbar">
+                <ul class="custom-menu">
+                    <li class="sign-out">
+                        <a href="#" title="退出">退出</a>
                     </li>
-                    <li>
-                        <a href="" title="分店管理">
-                            <i class="iconfont icon-subbranch"></i>分店管理
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" title="消费记录" class="active">
-                            <i class="iconfont icon-record"></i><span>消费记录</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" title="商家卡管理">
-                            <i class="iconfont icon-card"></i><span>商家卡管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" title="提现管理">
-                            <i class="iconfont icon-withdraw"></i><span>提现管理</span>
-                        </a>
+                    <li class="user-menu">
+                        <img src="imgs/user-img.jpg" class="user-image" alt="User Image">
+                        <span class="user-nickname">Hello,韩雪梅</span>
                     </li>
                 </ul>
-            </aside>
-            <main id="main" role="main">
-                <div class="content-wrapper">
-                    <div class="handle-list">
-                        <div class="condition-list">
-                            <div class="order-number">
-                                <label for="orderNumber">订单序号</label>
-                                <input type="text" name="orderNumber" id="orderNumber" placeholder="请输入订单序号">
-                            </div>
-                            <div class="product-name">
-                                <label for="productName">商品名称</label>
-                                <input type="text" name="productName" id="productName" placeholder="请输入商品名称">
-                            </div>
-                            <div class="user-phone">
-                                <label for="userPhone">用户手机号</label>
-                                <input type="text" name="userPhone" id="userPhone" placeholder="请输入用户手机号">
-                            </div>
-                            <div class="order-time">
-                                <label for="orderTime">下单时间</label>
-                                <input type="text" name="orderTime" id="orderTime" placeholder="请输入下单时间">
-                            </div>
+            </nav>
+        </header>
+        <aside class="sidebar-menu" id="sidebarMenu">
+            <ul class="sidebar-menu-list" id="sidebarMenuList" data-widget="tree">
+                <li>
+                    <a href="" title="基本信息">
+                        <i class="iconfont icon-basic-info"></i>基本信息
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="分店管理">
+                        <i class="iconfont icon-subbranch"></i>分店管理
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="消费记录" class="active">
+                        <i class="iconfont icon-record"></i><span>消费记录</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="商家卡管理">
+                        <i class="iconfont icon-card"></i><span>商家卡管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="提现管理">
+                        <i class="iconfont icon-withdraw"></i><span>提现管理</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main id="main" role="main">
+            <div class="content-wrapper">
+                <div class="handle-list">
+                    <div class="condition-list">
+                        <div class="order-number">
+                            <label for="orderNumber">订单序号</label>
+                            <input type="text" name="orderNumber" id="orderNumber" placeholder="请输入订单序号">
                         </div>
-                        <div class="handle-method">
-                            <button class="filter" title="筛选" id="filterRecord">筛选</button>
-                            <button class="export" title="导出" id="exportRecord">导出</button>
+                        <div class="product-name">
+                            <label for="productName">商品名称</label>
+                            <input type="text" name="productName" id="productName" placeholder="请输入商品名称">
+                        </div>
+                        <div class="user-phone">
+                            <label for="userPhone">用户手机号</label>
+                            <input type="text" name="userPhone" id="userPhone" placeholder="请输入用户手机号">
+                        </div>
+                        <div class="order-time">
+                            <label for="orderTime">下单时间</label>
+                            <input type="text" name="orderTime" id="orderTime" placeholder="请输入下单时间">
                         </div>
                     </div>
-                    <div class="record-list">
-                        <table class="record-list-table">
-                            <thead>
-                            <tr>
-                                <th class="order-number">订单序号</th>
-                                <th class="product-name">商品名称</th>
-                                <th class="user-phone">用户手机号</th>
-                                <th class="payment-method">支付方式</th>
-                                <th class="payment-amount">支付金额</th>
-                                <th class="order-time">下单时间</th>
-                                <th class="order-status">订单状况</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <!-- paid 已支付, not-paid 未支付, abolish 取消, unknown 未知 -->
-                            <tr>
-                                <td class="order-number">999999</td>
-                                <td class="product-name">01商品名称，01商品名称，01商品名称</td>
-                                <td class="user-phone">18227752005</td>
-                                <td class="payment-method">01支付方式</td>
-                                <td class="payment-amount">999999.99</td>
-                                <td class="order-time">2018-12-31 23:59:59</td>
-                                <td class="order-status paid">已支付</td>
-                            </tr>
-                            <tr>
-                                <td class="order-number">01</td>
-                                <td class="product-name">01商品名称，01商品名称，01商品名称</td>
-                                <td class="user-phone">01用户手机号</td>
-                                <td class="payment-method">01支付方式</td>
-                                <td class="payment-amount">01支付金额</td>
-                                <td class="order-time">01下单时间</td>
-                                <td class="order-status not-paid">未支付</td>
-                            </tr>
-                            <tr>
-                                <td class="order-number">01</td>
-                                <td class="product-name">01商品名称，01商品名称，01商品名称</td>
-                                <td class="user-phone">01用户手机号</td>
-                                <td class="payment-method">01支付方式</td>
-                                <td class="payment-amount">01支付金额</td>
-                                <td class="order-time">01下单时间</td>
-                                <td class="order-status abolish">取消</td>
-                            </tr>
-                            <tr>
-                                <td class="order-number">01</td>
-                                <td class="product-name">01商品名称，01商品名称，01商品名称</td>
-                                <td class="user-phone">01用户手机号</td>
-                                <td class="payment-method">01支付方式</td>
-                                <td class="payment-amount">01支付金额</td>
-                                <td class="order-time">01下单时间</td>
-                                <td class="order-status unknown">未知</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <nav class="pagination-wrapper" aria-label="Page navigation">
-                            <ul class="pagination">
-                                <!--给不能点击的链接添加 .disabled 类-->
-                                <li class="disabled">
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <!--给当前页添加 .active 类-->
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                    <div class="handle-method">
+                        <button class="filter" title="筛选" id="filterRecord">筛选</button>
+                        <button class="export" title="导出" id="exportRecord">导出</button>
                     </div>
                 </div>
-            </main>
-            <footer id="footer" role="contentinfo">
-            </footer>
-        </div>
+                <div class="record-list">
+                    <table class="record-list-table">
+                        <thead>
+                        <tr>
+                            <th class="order-number">订单序号</th>
+                            <th class="product-name">商品名称</th>
+                            <th class="user-phone">用户手机号</th>
+                            <th class="payment-method">支付方式</th>
+                            <th class="payment-amount">支付金额</th>
+                            <th class="order-time">下单时间</th>
+                            <th class="order-status">订单状况</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- paid 已支付, not-paid 未支付, abolish 取消, unknown 未知 -->
+                        <tr>
+                            <td class="order-number">999999</td>
+                            <td class="product-name">01商品名称，01商品名称，01商品名称</td>
+                            <td class="user-phone">18227752005</td>
+                            <td class="payment-method">01支付方式</td>
+                            <td class="payment-amount">999999.99</td>
+                            <td class="order-time">2018-12-31 23:59:59</td>
+                            <td class="order-status paid">已支付</td>
+                        </tr>
+                        <tr>
+                            <td class="order-number">01</td>
+                            <td class="product-name">01商品名称，01商品名称，01商品名称</td>
+                            <td class="user-phone">01用户手机号</td>
+                            <td class="payment-method">01支付方式</td>
+                            <td class="payment-amount">01支付金额</td>
+                            <td class="order-time">01下单时间</td>
+                            <td class="order-status not-paid">未支付</td>
+                        </tr>
+                        <tr>
+                            <td class="order-number">01</td>
+                            <td class="product-name">01商品名称，01商品名称，01商品名称</td>
+                            <td class="user-phone">01用户手机号</td>
+                            <td class="payment-method">01支付方式</td>
+                            <td class="payment-amount">01支付金额</td>
+                            <td class="order-time">01下单时间</td>
+                            <td class="order-status abolish">取消</td>
+                        </tr>
+                        <tr>
+                            <td class="order-number">01</td>
+                            <td class="product-name">01商品名称，01商品名称，01商品名称</td>
+                            <td class="user-phone">01用户手机号</td>
+                            <td class="payment-method">01支付方式</td>
+                            <td class="payment-amount">01支付金额</td>
+                            <td class="order-time">01下单时间</td>
+                            <td class="order-status unknown">未知</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <nav class="pagination-wrapper" aria-label="Page navigation">
+                        <ul class="pagination">
+                            <!--给不能点击的链接添加 .disabled 类-->
+                            <li class="disabled">
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <!--给当前页添加 .active 类-->
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </main>
+        <footer id="footer" role="contentinfo">
+        </footer>
         <script src="scripts/jquery.min.js"></script>
         <script src="scripts/tuobei-business-back-end.js"></script>
         <script>
