@@ -716,10 +716,11 @@
 }
 
 /*===提现管理===*/
-/*余额提现*/
 .content-wrapper {
   $width: 200px;
   $height: 40px;
+
+  /*余额提现*/
   .withdraw-nav {
     width: $width;
     float: left;
@@ -916,6 +917,8 @@
       }
     }
   }
+
+  /*银行卡管理*/
   .card-management-content {
     $item-height: 90px;
     $item-width: 250px;
@@ -1042,6 +1045,271 @@
       &:focus {
         background-color: darken($btn-bg-color, 14%);
       }
+    }
+  }
+
+  /*分店管理*/
+  .subbranch-nav {
+    width: $width;
+    float: left;
+    background-color: #fff;
+    ul {
+      li {
+        border-bottom: #eaeff9;
+        a {
+          display: block;
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          color: $text-info-color;
+          font-size: $font-size;
+          &.active,
+          &:hover {
+            background-color: $main-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .subbranch-add {
+      display: block;
+      margin: 230px auto 20px;
+      width: calc(#{$width} - 40px);
+      height: 30px;
+      font-size: $font-size;
+      color: #fff;
+      background-color: $btn-bg-color;
+    }
+  }
+
+  .subbranch-info {
+    width: calc(100% - #{$width} - 20px);
+    float: right;
+    background-color: #fff;
+    padding: 30px 30px 90px 60px;
+    @extend .clearfix;
+    .form-left {
+      $width: 114px;
+      $height: 34px;
+      width: 66%;
+      min-width: 540px;
+      float: left;
+      > div {
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 0;
+        label:not(.error) {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: $font-size;
+          width: $width;
+          height: $height;
+          line-height: $height;
+          position: relative;
+          padding-right: 18px;
+          text-align: right;
+          color: $text-color;
+          &.required {
+            &:after {
+              content: "*";
+              position: absolute;
+              top: 50%;
+              right: 8px;
+              font-size: $font-size;
+              color: #f00;
+              transform: translateY(calc(-50% + 2px));
+            }
+          }
+        }
+        label.error {
+          display: block;
+          font-size: 12px;
+          height: 24px;
+          line-height: 24px;
+          margin-left: $width;
+
+        }
+        input {
+          display: inline-block;
+          vertical-align: middle;
+          max-width: calc(100% - #{$width});
+          width: 44%;
+          height: $height;
+          line-height: $height - 2;
+          border: 1px solid #bfbfbf;
+          font-size: $font-size;
+          color: #a7a7a7;
+          padding-right: 20px;
+          padding-left: 20px;
+          border-radius: 2px;
+          @extend %ellipsis;
+        }
+        &.qr-code,
+        &.withdraw-entitle {
+          select {
+            display: inline-block;
+            vertical-align: middle;
+            width: 44%;
+            max-width: calc(100% - #{$width});
+            height: $height;
+            line-height: $height - 2;
+            padding-left: 20px;
+            padding-right: 10px;
+            border: 1px solid #bfbfbf;
+            color: #a7a7a7;
+            font-size: $font-size;
+            cursor: pointer;
+            &:focus {
+              outline: none;
+            }
+            option {
+              height: 30px;
+              line-height: 30px;
+              padding-right: 20px;
+              padding-left: 20px;
+              color: $text-info-color;
+              font-size: $font-size;
+              cursor: pointer;
+            }
+          }
+        }
+        &.subbranch-intro {
+          textarea {
+            display: inline-block;
+            vertical-align: middle;
+            min-width: calc(100% - #{$width});
+            width: calc(100% - #{$width});
+            max-width: calc(100% - #{$width});
+            min-height: 100px;
+            height: 150px;
+            max-height: 150px;
+            line-height: $height - 12;
+            border: 1px solid #bfbfbf;
+            font-size: $font-size;
+            color: #a7a7a7;
+            padding: 6px 20px;
+            border-radius: 2px;
+            resize: vertical;
+          }
+        }
+        &.cancel-confirm {
+          margin-left: $width;
+          margin-top: 50px;
+          font-size: 0;
+          button {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: $font-size;
+            color: #fff;
+            min-width: 100px;
+            height: 40px;
+            line-height: 40px;
+            padding-right: 32px;
+            padding-left: 32px;
+            text-align: center;
+            border-radius: 40px;
+            &:not(:last-of-type) {
+              margin-right: 40px;
+            }
+          }
+          .cancel {
+            background-color: #eaeff9;
+          }
+          .confirm {
+            background-color: $btn-bg-color;
+          }
+        }
+        .subbranch-picture-file-upload {
+          z-index: 99;
+          display: inline-block;
+          vertical-align: middle;
+          width: calc(100% - #{$width});
+          position: relative;
+          height: 210px;
+          .tips {
+            position: absolute;
+            bottom: 0;
+            left: 180px;
+            font-size: 12px;
+            height: 24px;
+            line-height: 24px;
+            color: #a7a7a7;
+          }
+          .placeholder-img-list {
+            z-index: 99;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @extend .clearfix;
+            li {
+              float: left;
+              width: 100px;
+              height: 100px;
+              background-color: #eaeff9;
+              padding: 26px 10px 0;
+              overflow: hidden;
+              text-align: center;
+              border-radius: 2px;
+              margin: 9px;
+              i {
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 32px;
+                color: #fff;
+              }
+              span {
+                font-size: 12px;
+                color: #fff;
+                @extend %ellipsis;
+              }
+            }
+          }
+        }
+        .logo-file-upload {
+          z-index: 99;
+          width: 120px;
+          position: relative;
+          height: 210px;
+          .tips {
+            position: absolute;
+            bottom: 0;
+            left: 180px;
+            font-size: 12px;
+            height: 24px;
+            line-height: 24px;
+            color: #a7a7a7;
+          }
+          .placeholder-img-list {
+            z-index: 99;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @extend .clearfix;
+            li {
+              float: left;
+              width: 100px;
+              height: 100px;
+              background-color: #eaeff9;
+              padding: 26px 10px 0;
+              overflow: hidden;
+              text-align: center;
+              border-radius: 2px;
+              margin: 9px;
+              span {
+                font-size: 16px;
+                color: #fff;
+                @extend %ellipsis;
+              }
+            }
+          }
+        }
+      }
+    }
+    .logo-img {
+      float: right;
+      width: 120px;
     }
   }
 }
