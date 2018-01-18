@@ -220,6 +220,10 @@
               background-color: #a7a7a7;
             }
           }
+          &:focus {
+            border-color: darken(#bfbfbf, 80%);
+            outline: none;
+          }
         }
       }
       label:not(.error) {
@@ -234,7 +238,7 @@
         text-align: right;
         color: $text-color;
         &.required {
-          &:after {
+          &::after {
             content: "*";
             position: absolute;
             top: 50%;
@@ -266,6 +270,10 @@
         padding-left: 20px;
         border-radius: 2px;
         @extend %ellipsis;
+        &:focus {
+          border-color: darken(#bfbfbf, 80%);
+          outline: none;
+        }
       }
       &.business-intro {
         textarea {
@@ -1105,6 +1113,132 @@
         }
       }
     }
+    .add-card-wrapper {
+      $width: 90px;
+      $height: 34px;
+      z-index: 10000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      box-shadow: 0 0 5px #eee;
+      padding: 30px;
+      border-radius: 4px;
+      &.default {
+        display: none;
+      }
+      &.active {
+        display: block;
+      }
+      > div {
+        font-size: 0;
+        &:not(:last-of-type) {
+          margin-bottom: 20px;
+        }
+        label:not(.error) {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: $font-size;
+          width: $width;
+          height: $height;
+          line-height: $height;
+          position: relative;
+          padding-right: 18px;
+          text-align: right;
+          color: $text-color;
+          &.required {
+            &::after {
+              content: "*";
+              position: absolute;
+              top: 50%;
+              right: 8px;
+              font-size: $font-size;
+              color: #f00;
+              transform: translateY(calc(-50% + 2px));
+            }
+          }
+        }
+        label.error {
+          display: block;
+          font-size: 12px;
+          height: 24px;
+          line-height: 24px;
+          margin-left: $width;
+        }
+        input {
+          display: inline-block;
+          vertical-align: middle;
+          width: calc(100% - #{$width});
+          height: $height;
+          line-height: $height - 2;
+          border: 1px solid #bfbfbf;
+          font-size: $font-size;
+          color: #a7a7a7;
+          padding-right: 20px;
+          padding-left: 20px;
+          border-radius: 2px;
+          @extend %ellipsis;
+          &:focus {
+            border-color: darken(#bfbfbf, 80%);
+            outline: none;
+          }
+        }
+        &.add-card-handle {
+          margin-left: $width;
+          margin-top: 40px;
+          font-size: 0;
+          button {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: $font-size;
+            color: #fff;
+            padding: 10px 32px;
+            text-align: center;
+            border-radius: 40px;
+            &:not(:last-of-type) {
+              margin-right: 40px;
+            }
+          }
+          .cancel {
+            background-color: #eaeff9;
+          }
+          .confirm {
+            background-color: $btn-bg-color;
+          }
+        }
+      }
+      .remove-card-handle {
+        margin-top: 40px;
+        button {
+          padding: 10px 32px;
+          color: #fff;
+          font-size: 14px;
+          border-radius: 40px;
+          &:not(:last-of-type) {
+            margin-right: 40px;
+          }
+          &.cancel-remove {
+            background-color: #eaeff9;
+            &:hover {
+              background-color: darken(#eaeff9, 8%);
+            }
+            &:focus {
+              background-color: darken(#eaeff9, 14%);
+            }
+          }
+          &.confirm-remove {
+            background-color: $btn-bg-color;
+            &:hover {
+              background-color: darken($btn-bg-color, 8%);
+            }
+            &:focus {
+              background-color: darken($btn-bg-color, 14%);
+            }
+          }
+        }
+      }
+    }
   }
 
   /*分店管理*/
@@ -1170,7 +1304,7 @@
           text-align: right;
           color: $text-color;
           &.required {
-            &:after {
+            &::after {
               content: "*";
               position: absolute;
               top: 50%;
@@ -1203,6 +1337,10 @@
           padding-left: 20px;
           border-radius: 2px;
           @extend %ellipsis;
+          &:focus {
+            border-color: darken(#bfbfbf, 80%);
+            outline: none;
+          }
         }
         &.qr-code,
         &.withdraw-entitle {
