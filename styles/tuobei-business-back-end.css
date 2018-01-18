@@ -1535,7 +1535,7 @@ label.error {
   outline: none;
 }
 .content-wrapper .card-management-content .add-card-wrapper > div.add-card-handle {
-  margin-left: 90px;
+  margin-left: 200px;
   margin-top: 40px;
   font-size: 0;
 }
@@ -1588,7 +1588,7 @@ label.error {
   background-color: #35d5a2;
 }
 .content-wrapper .subbranch-nav {
-  width: 90px;
+  width: 200px;
   float: left;
   background-color: #fff;
 }
@@ -1611,14 +1611,14 @@ label.error {
 .content-wrapper .subbranch-nav .subbranch-add {
   display: block;
   margin: 230px auto 20px;
-  width: calc(90px - 40px);
+  width: calc(200px - 40px);
   height: 30px;
   font-size: 14px;
   color: #fff;
   background-color: #70e1bd;
 }
 .content-wrapper .subbranch-info {
-  width: calc(100% - 90px - 20px);
+  width: calc(100% - 200px - 20px);
   float: right;
   background-color: #fff;
   padding: 30px 20px 90px 40px;

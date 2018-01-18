@@ -1114,8 +1114,8 @@
       }
     }
     .add-card-wrapper {
-      $width: 90px;
-      $height: 34px;
+      $add-card-form-width: 90px;
+      $add-card-form-height: 34px;
       z-index: 10000;
       position: absolute;
       top: 50%;
@@ -1140,9 +1140,9 @@
           display: inline-block;
           vertical-align: middle;
           font-size: $font-size;
-          width: $width;
-          height: $height;
-          line-height: $height;
+          width: $add-card-form-width;
+          height: $add-card-form-height;
+          line-height: $add-card-form-height;
           position: relative;
           padding-right: 18px;
           text-align: right;
@@ -1164,14 +1164,14 @@
           font-size: 12px;
           height: 24px;
           line-height: 24px;
-          margin-left: $width;
+          margin-left: $add-card-form-width;
         }
         input {
           display: inline-block;
           vertical-align: middle;
-          width: calc(100% - #{$width});
-          height: $height;
-          line-height: $height - 2;
+          width: calc(100% - #{$add-card-form-width});
+          height: $add-card-form-height;
+          line-height: $add-card-form-height - 2;
           border: 1px solid #bfbfbf;
           font-size: $font-size;
           color: #a7a7a7;
