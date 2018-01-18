@@ -64,7 +64,7 @@
                     <a href="#" class="withdraw-link active" title="银行卡管理">银行卡管理</a>
                 </nav>
                 <div class="withdraw-content card-management-content">
-                    <ul class="card-list">
+                    <ul class="card-list" id="cardList">
                         <!-- 建设银行 ccb，交通银行 bocom，工商银行 icbc，中国银行 boc，农业银行 abc -->
                         <li class="card-item icbc" title="选中删除">
                             <i class="iconfont icon-icbc"></i>
@@ -86,7 +86,37 @@
                         </li>
                         <button class="add-card-btn" title="新添加银行卡"><i class="iconfont icon-add"></i>新添加银行卡</button>
                     </ul>
-                    <button class="remove-btn" type="button" title="删除这张银行卡">删除</button>
+                    <button class="remove-btn default" id="removeBtn" type="button" title="不可用(请选中银行卡)">删除</button>
+                    <div class="remove-card-wrapper default" id="removeCardWrapper">
+                        <div class="tips">确认删除</div>
+                        <div class="remove-card-handle">
+                            <button type="button" title="取消" id="cancelRemove" class="cancel-remove">取消</button>
+                            <button type="button" title="确认删除" id="confirmRemove" class="confirm-remove">确定</button>
+                        </div>
+                    </div>
+                    <form action="" method="" id="addCardWrapper" class="add-card-wrapper default">
+                        <div class="card-holder">
+                            <label for="cardHolder">持卡人</label>
+                            <input type="text" id="cardHolder" name="cardHolder" placeholder="请输入持卡人姓名">
+                        </div>
+                        <div class="card-number">
+                            <label for="cardNumber">银行卡号</label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="请输入银行卡号">
+                        </div>
+                        <div class="card-holder-phone">
+                            <label for="cardHolderPhone">手机号码</label>
+                            <input type="text" id="cardHolderPhone" name="cardHolderPhone" placeholder="请输入银行预留手机号码">
+                        </div>
+                        <div class="verification-code">
+                            <label for="verificationCode">验证码</label>
+                            <input type="text" id="verificationCode" name="verificationCode" placeholder="请输入验证码">
+                            <button type="button" title="获取验证码" id="getVerificationCode">获取验证码</button>
+                        </div>
+                        <div class="add-card-handle">
+                            <button type="button" title="取消" id="addCardCancel">取消</button>
+                            <button type="button" title="确认删除" id="addCardConfirm">确定</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </main>
@@ -96,8 +126,36 @@
         <script src="scripts/tuobei-business-back-end.js"></script>
         <script>
             $(function () {
+                // 选中银行卡
                 $(".card-item").click(function () {
-                    $(this).addClass("selected").siblings("li").removeClass("selected");
+                    if (!($(this).hasClass("selected"))) {
+                        // 获取被选中元素的索引
+                        var i = $(this).index();
+                        $(this).addClass("selected").attr("title", "取消选中");
+                        $(this).siblings("li").removeClass("selected").attr("title", "选中删除");
+                        // 选中银行卡后，删除按钮可用
+                        $(".remove-btn").removeClass("default").addClass("active").attr("title","删除这张银行卡");
+
+                        // 删除银行卡确认
+                        $("#removeBtn").click(function () {
+                            $("#removeCardWrapper").show();
+                            // 确认删除银行卡
+                            $("#confirmRemove").click(function () {
+                                $(".card-item").eq(i).detach();
+                                $("#removeCardWrapper").hide();
+                                $(".remove-btn").addClass("default").removeClass("active").attr("title","不可用(请选中银行卡)");
+                            });
+                            // 取消删除银行卡
+                            $("#cancelRemove").click(function () {
+                                $("#removeCardWrapper").hide();
+                            });
+                        });
+                    } else {
+                        $(this).removeClass("selected").attr("title", "选中删除");
+                        $(this).attr("title", "取消选中");
+                        // 选中银行卡前，删除按钮不可用
+                        $(".remove-btn").addClass("default").removeClass("active").attr("title","不可用(请选中银行卡)");
+                    }
                 });
             });
         </script>

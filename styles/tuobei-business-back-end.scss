@@ -1035,12 +1035,72 @@
       border-radius: 40px;
       font-size: $font-size;
       color: #fff;
-      background-color: $btn-bg-color;
-      &:hover {
-        background-color: darken($btn-bg-color, 8%);
+      &.default {
+        background-color: #bebebe;
+        cursor: not-allowed;
       }
-      &:focus {
-        background-color: darken($btn-bg-color, 14%);
+      &.active {
+        background-color: $btn-bg-color;
+        cursor: pointer;
+        &:hover {
+          background-color: darken($btn-bg-color, 8%);
+        }
+        &:focus {
+          background-color: darken($btn-bg-color, 14%);
+        }
+      }
+    }
+    .remove-card-wrapper {
+      z-index: 10000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      box-shadow: 0 0 5px #eee;
+      padding: 30px 50px 50px;
+      border-radius: 4px;
+      &.default {
+        display: none;
+      }
+      &.active {
+        display: block;
+      }
+      .tips {
+        line-height: 1.6em;
+        text-align: center;
+        font-size: 14px;
+        color: $text-info-color;
+      }
+      .remove-card-handle {
+        margin-top: 40px;
+        button {
+          padding: 10px 32px;
+          color: #fff;
+          font-size: 14px;
+          border-radius: 40px;
+          &:not(:last-of-type) {
+            margin-right: 40px;
+          }
+          &.cancel-remove {
+            background-color: #eaeff9;
+            &:hover {
+              background-color: darken(#eaeff9, 8%);
+            }
+            &:focus {
+              background-color: darken(#eaeff9, 14%);
+            }
+          }
+          &.confirm-remove {
+            background-color: $btn-bg-color;
+            &:hover {
+              background-color: darken($btn-bg-color, 8%);
+            }
+            &:focus {
+              background-color: darken($btn-bg-color, 14%);
+            }
+          }
+        }
       }
     }
   }

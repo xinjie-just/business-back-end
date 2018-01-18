@@ -1317,12 +1317,72 @@ label.error {
   border-radius: 40px;
   font-size: 14px;
   color: #fff;
-  background-color: #70e1bd;
 }
-.content-wrapper .card-management-content .remove-btn:hover {
+.content-wrapper .card-management-content .remove-btn.default {
+  background-color: #bebebe;
+  cursor: not-allowed;
+}
+.content-wrapper .card-management-content .remove-btn.active {
+  background-color: #70e1bd;
+  cursor: pointer;
+}
+.content-wrapper .card-management-content .remove-btn.active:hover {
   background-color: #4edaad;
 }
-.content-wrapper .card-management-content .remove-btn:focus {
+.content-wrapper .card-management-content .remove-btn.active:focus {
+  background-color: #35d5a2;
+}
+.content-wrapper .card-management-content .remove-card-wrapper {
+  z-index: 10000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 5px #eee;
+  padding: 30px 50px 50px;
+  border-radius: 4px;
+}
+.content-wrapper .card-management-content .remove-card-wrapper.default {
+  display: none;
+}
+.content-wrapper .card-management-content .remove-card-wrapper.active {
+  display: block;
+}
+.content-wrapper .card-management-content .remove-card-wrapper .tips {
+  line-height: 1.6em;
+  text-align: center;
+  font-size: 14px;
+  color: #2b2b2b;
+}
+.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle {
+  margin-top: 40px;
+}
+.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button {
+  padding: 10px 32px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 40px;
+}
+.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button:not(:last-of-type) {
+  margin-right: 40px;
+}
+.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.cancel-remove {
+  background-color: #eaeff9;
+}
+.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.cancel-remove:hover {
+  background-color: #cad7f0;
+}
+.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.cancel-remove:focus {
+  background-color: #b2c5e9;
+}
+.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.confirm-remove {
+  background-color: #70e1bd;
+}
+.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.confirm-remove:hover {
+  background-color: #4edaad;
+}
+.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.confirm-remove:focus {
   background-color: #35d5a2;
 }
 
