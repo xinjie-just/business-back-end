@@ -7,9 +7,8 @@
         <title>分店管理 | 拓贝商家后台</title>
         <meta name="keywords" content="">
         <meta name="description" content="">
-        <link rel="stylesheet" href="//at.alicdn.com/t/font_531074_coetjeii8k9be29.css">
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_531074_3qzarkzv6vdbzkt9.css">
         <link rel="stylesheet" href="styles/file-upload.css">
-        <link rel="stylesheet" href="styles/icon-font.css">
         <link rel="stylesheet" href="styles/time-picker.css">
         <link rel="stylesheet" href="styles/tuobei-business-back-end.css">
     </head>
@@ -62,102 +61,89 @@
         </aside>
         <main id="main" role="main">
             <div class="content-wrapper">
+                <nav class="subbranch-nav">
+                    <ul>
+                        <li>
+                            <a href="#" title="奇迹健身(一品天下店)" class="active">奇迹健身(一品天下店)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="奇迹健身(一品天下店)">奇迹健身(一品天下店)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="奇迹健身(一品天下店)">奇迹健身(一品天下店)</a>
+                        </li>
+                    </ul>
+                    <button type="button" class="subbranch-add" id="subbranchAdd" title="新增分店">新增</button>
+                </nav>
 
-                <form action="#" method="" id="basicInfo" name="basicInfo" class="basic-info">
+                <form action="#" method="" id="subbranchInfo" name="subbranchInfo" class="subbranch-info">
                     <!-- 必填，必选字段在 label 中添加 required 类 -->
                     <div class="form-left">
-                        <div class="row one-line">
-                            <div class="code">
-                                <label for="code" class="required">商家编号</label>
-                                <input type="text" name="code" id="code" placeholder="请输入商家所在地区编号">
-                            </div>
-                            <div class="name">
-                                <label for="name" class="required">商家名称</label>
-                                <input type="text" name="name" id="name" placeholder="请输入商家名称">
+                        <div class="name">
+                            <label for="name" class="required">分店名称</label>
+                            <input type="text" name="name" id="name" placeholder="请输入商家分店名称">
+                        </div>
+                        <div class="address">
+                            <label for="address" class="required">分店地址</label>
+                            <input type="text" name="address" id="address" placeholder="请输入商家分店地址">
+                        </div>
+                        <div class="qr-code">
+                            <label for="qrCode" class="required">分店二维码</label>
+                            <select name="qrCode" id="qrCode">
+                                <option value="0">分店二维码1</option>
+                                <option value="1">分店二维码2</option>
+                            </select>
+                        </div>
+                        <div class="withdraw-entitle">
+                            <label for="withdrawEntitle" class="required">分店提现权利</label>
+                            <select name="withdrawEntitle" id="withdrawEntitle">
+                                <option value="0">分店提现权利1</option>
+                                <option value="1">分店提现权利2</option>
+                            </select>
+                        </div>
+                        <div class="linkman">
+                            <label for="linkman" class="required">联系人</label>
+                            <input type="text" name="linkman" id="linkman" placeholder="请输入联系人姓名">
+                        </div>
+                        <div class="link-phone">
+                            <label for="linkPhone" class="required">联系电话</label>
+                            <input type="text" name="linkPhone" id="linkPhone" placeholder="请输入联系人电话">
+                        </div>
+                        <div class="withdrawal-proportion">
+                            <label for="withdrawalProportion" class="required">分店提现比例</label>
+                            <input type="text" name="withdrawalProportion" id="withdrawalProportion" placeholder="请输入分店提现比例">
+                        </div>
+                        <div class="subbranch-picture">
+                            <label class="required">分店照片</label>
+                            <div id="subbranchPictureFileUpload" name="subbranchPictureFileUpload" class="fileUploadContent subbranch-picture-file-upload">
+                                <ul class="placeholder-img-list">
+                                    <li>
+                                        <i class="iconfont icon-placeholder-image"></i>
+                                        <span>照片预览</span>
+                                    </li>
+                                    <li>
+                                        <i class="iconfont icon-placeholder-image"></i>
+                                        <span>照片预览</span>
+                                    </li>
+                                    <li>
+                                        <i class="iconfont icon-placeholder-image"></i>
+                                        <span>照片预览</span>
+                                    </li>
+                                    <li>
+                                        <i class="iconfont icon-placeholder-image"></i>
+                                        <span>照片预览</span>
+                                    </li>
+                                </ul>
+                                <span class="tips">最多可上传4张图片，每张图片大小不超过1M，文件格式为JPG</span>
                             </div>
                         </div>
-                        <div class="row one-line">
-                            <div class="linkman">
-                                <label for="linkman" class="required">联系人</label>
-                                <input type="text" name="linkman" id="linkman" placeholder="请输入联系人姓名">
-                            </div>
-                            <div class="telphone">
-                                <label for="telphone" class="required">商家号码</label>
-                                <input type="text" name="telphone" id="telphone" placeholder="请输入商家电话号码">
-                            </div>
+                        <div class="subbranch-intro">
+                            <label for="businessIntro" class="required">分店介绍</label>
+                            <textarea name="businessIntro" id="businessIntro" placeholder="描述分店经营范围，商品服务等信息"></textarea>
                         </div>
-                        <div class="row one-line">
-                            <div class="opening-time">
-                                <label for="startTime" class="required">营业时间</label>
-                                <input type="text" name="startTime" id="startTime" placeholder="开始时间" readonly>
-                                <input type="text" name="endTime" id="endTime" placeholder="结束时间">
-                            </div>
-                            <div class="legal-person">
-                                <label for="legalPerson" class="required">商家法人</label>
-                                <input type="text" name="legalPerson" id="legalPerson" placeholder="请输入商家法人姓名">
-                            </div>
-                        </div>
-                        <div class="row one-line">
-                            <div class="address">
-                                <label for="address" class="required">商家地址</label>
-                                <input type="text" name="address" id="address" placeholder="请输入商家详细地址">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="business-license">
-                                <label class="required">营业执照</label>
-                                <div id="businessLicenseFileUpload" name="businessLicenseFileUpload" class="fileUploadContent business-license-file-upload">
-                                    <ul class="placeholder-img-list">
-                                        <li>
-                                            <i class="iconfont icon-placeholder-image"></i>
-                                            <span>照片预览</span>
-                                        </li>
-                                        <li>
-                                            <i class="iconfont icon-placeholder-image"></i>
-                                            <span>照片预览</span>
-                                        </li>
-                                    </ul>
-                                    <span class="tips">最多可上传2张图片，每张图片大小不超过1M，文件格式为JPG</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="business-picture">
-                                <label class="required">商家照片</label>
-                                <div id="businessPictureFileUpload" name="businessPictureFileUpload" class="fileUploadContent business-picture-file-upload">
-                                    <ul class="placeholder-img-list">
-                                        <li>
-                                            <i class="iconfont icon-placeholder-image"></i>
-                                            <span>照片预览</span>
-                                        </li>
-                                        <li>
-                                            <i class="iconfont icon-placeholder-image"></i>
-                                            <span>照片预览</span>
-                                        </li>
-                                        <li>
-                                            <i class="iconfont icon-placeholder-image"></i>
-                                            <span>照片预览</span>
-                                        </li>
-                                        <li>
-                                            <i class="iconfont icon-placeholder-image"></i>
-                                            <span>照片预览</span>
-                                        </li>
-                                    </ul>
-                                    <span class="tips">最多可上传4张图片，每张图片大小不超过1M，文件格式为JPG</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="business-intro">
-                                <label for="businessIntro" class="required">商家介绍</label>
-                                <textarea name="businessIntro" id="businessIntro" placeholder="描述商家经营范围，商品服务等信息"></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="cancel-confirm">
-                                <button class="cancel" id="cancel" name="cancel" title="取消">取消</button>
-                                <button class="confirm" id="confirm" name="confirm" title="确定">确定</button>
-                            </div>
+                        <div class="cancel-confirm">
+                            <button class="cancel" id="cancel" name="cancel" title="取消">取消</button>
+                            <button class="confirm" id="confirm" name="confirm" title="确定">确定</button>
                         </div>
                     </div>
                     <div class="logo-img">
@@ -180,41 +166,8 @@
         <script src="scripts/jquery-timepicker.js"></script>
         <script src="scripts/tuobei-business-back-end.js"></script>
         <script>
-            // 营业时间
-            $("#startTime").hunterTimePicker();
-            $("#endTime").hunterTimePicker();
-            // 验证营业开始时间是否营业活动结束时间
-            $("#endTime").blur(function() {
-                if (($("#startTime").val() != '') && ($("#endTime").val != '')) {
-                    time();
-                }
-            });
-            $("#startTime").blur(function() {
-                if (($("#startTime").val() != '') && ($("#endTime").val() != '')) {
-                    time();
-                }
-            });
-            function time() {
-                var start = Date.parse(new Date($("#startTime").val()));  // 将开始时间转换成时间戳
-                var end = Date.parse(new Date($("#endTime").val()));  // 将结束时间转换成时间戳
-                if (!(start < end)) {
-                    alert("开始时间不能大于结束时间！");
-                }
-            }
-            // 营业执照
-            $("#businessLicenseFileUpload").initUpload({
-                "uploadUrl": "#",                //上传文件信息地址
-                "size": 1024,                     //文件大小限制，单位kb,默认不限制
-                "maxFileNumber": 2,              //文件个数限制，为整数
-                "filelSavePath":"",             //文件上传地址，后台设置的根目录
-                "beforeUpload": beforeUploadFun, //在上传前执行的函数
-                "onUpload":onUploadFun,          //在上传后执行的函数
-                //autoCommit:true,                //文件是否自动上传
-                "fileType":['jpg']              //文件类型限制，默认不限制，注意写的是文件后缀
-            });
-
-            // 商家照片
-            $("#businessPictureFileUpload").initUpload({
+            // 分店照片
+            $("#subbranchPictureFileUpload").initUpload({
                 "uploadUrl": "#",               //上传文件信息地址
                 "size": 1024,                    //文件大小限制，单位kb,默认不限制
                 "maxFileNumber": 4,             //文件个数限制，为整数
@@ -255,32 +208,28 @@
                 // 在键盘按下并释放及提交后验证提交表单
                 $("#basicInfo").validate({
                     rules: {
-                        code: "required",
                         name: "required",
-                        linkman: "required",
-                        telphone: "required",
-                        startTime: "required",
-                        endTime: "required",
-                        legalPerson: "required",
                         address: "required",
-                        businessLicenseFileUpload: "required",
-                        businessPictureFileUpload: "required",
+                        qrCode: "required",
+                        withdrawEntitle: "required",
+                        linkman: "required",
+                        linkPhone: "required",
+                        withdrawalProportion: "required",
+                        subbranchPictureFileUpload: "required",
                         businessIntro: "required",
                         logoFileUpload: "required"
                     },
                     messages: {
-                        code: "请输入商家所在地区编号",
-                        name: "请输入商家名称",
+                        name: "请输入商家分店名称",
+                        address: "请输入商家分店地址",
+                        qrCode: "请选择分店二维码",
+                        withdrawEntitle: "请选择分店提现权利",
                         linkman: "请输入联系人姓名",
-                        telphone: "请输入商家电话号码",
-                        startTime: "请输入开始时间",
-                        endTime: "请输入结束时间",
-                        legalPerson: "请输入商家法人姓名",
-                        address: "请输入商家详细地址",
-                        businessLicenseFileUpload: "请选择营业执照",
-                        businessPictureFileUpload: "请选择商家照片",
-                        businessIntro: "请描述商家经营范围，商品服务等信息",
-                        logoFileUpload: "请选择商家LOGO"
+                        linkPhone: "请输入联系人电话",
+                        withdrawalProportion: "请输入分店提现比例",
+                        subbranchPictureFileUpload: "请选择分点照片",
+                        businessIntro: "请输入分店介绍",
+                        logoFileUpload: "请选择分店照片"
                     }
                 })
             });
