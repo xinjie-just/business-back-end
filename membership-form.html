@@ -7,7 +7,6 @@
         <title>添加商家卡 | 拓贝商家后台</title>
         <meta name="keywords" content="">
         <meta name="description" content="">
-        <link rel="stylesheet" href="//at.alicdn.com/t/font_531074_3qzarkzv6vdbzkt9.css">
         <link rel="stylesheet" href="styles/file-upload.css">
         <link rel="stylesheet" href="styles/time-picker.css">
         <link rel="stylesheet" href="styles/tuobei-business-back-end.css">
@@ -62,11 +61,11 @@
         <main id="main" role="main">
             <div class="content-wrapper">
                 <nav class="membership-card-nav">
-                    <a href="#" title="奇迹健身(一品天下店)" class="active">奇迹健身(一品天下店)</a>
-                    <a href="#" title="奇迹健身(一品天下店)">奇迹健身(一品天下店)</a>
-                    <a href="#" title="奇迹健身(一品天下店)">奇迹健身(一品天下店)</a>
+                    <a href="#" title="全部会员卡" class="active">全部会员卡</a>
+                    <a href="#" title="投资会员卡">投资会员卡</a>
+                    <a href="#" title="非投资会员卡">非投资会员卡</a>
                 </nav>
-                <form action="#" method="" id="membershipCardInfo" name="membershipCardInfo" class="membership-card-info">
+                <form action="#" method="" id="membershipCardForm" name="membershipCardForm" class="membership-card-form">
                     <!-- 必填，必选字段在 label 中添加 required 类 -->
                     <div class="name">
                         <label for="name" class="required">会员卡名称</label>
@@ -74,7 +73,7 @@
                     </div>
                     <div class="category">
                         <label for="category" class="required">会员卡种类</label>
-                        <select name="category" id="category" placeholder="请选择会员卡种类">
+                        <select name="category" id="category">
                             <option value="0">会员卡种类1</option>
                             <option value="2">会员卡种类2</option>
                             <option value="3">会员卡种类3</option>
@@ -82,7 +81,7 @@
                     </div>
                     <div class="type">
                         <label for="type" class="required">会员卡类型</label>
-                        <select name="type" id="type" placeholder="请选择会员卡类型">
+                        <select name="type" id="type">
                             <option value="0">会员卡类型1</option>
                             <option value="1">会员卡类型2</option>
                             <option value="2">会员卡类型3</option>
@@ -94,21 +93,21 @@
                     </div>
                     <div class="assure">
                         <label for="assure" class="required">是否通过品台保证</label>
-                        <select name="assure" id="assure" placeholder="请选择是否通过品台保证">
+                        <select name="assure" id="assure">
                             <option value="0">是</option>
                             <option value="1">否</option>
                         </select>
                     </div>
                     <div class="use">
                         <label for="use" class="required">是否仅限本人使用</label>
-                        <select name="use" id="use" placeholder="请选择是否仅限本人使用">
+                        <select name="use" id="use">
                             <option value="0">是</option>
                             <option value="1">否</option>
                         </select>
                     </div>
                     <div class="buy">
                         <label for="buy" class="required">是否支持合买</label>
-                        <select name="buy" id="buy" placeholder="请选择是否支持合买">
+                        <select name="buy" id="buy">
                             <option value="0">是</option>
                             <option value="1">否</option>
                         </select>
@@ -135,14 +134,14 @@
                     </div>
                     <div class="card-status">
                         <label for="cardStatus" class="required">售卡状态</label>
-                        <select name="cardStatus" id="cardStatus" placeholder="请选择售卡状态">
+                        <select name="cardStatus" id="cardStatus">
                             <option value="0">正常</option>
                             <option value="1">停用</option>
                         </select>
                     </div>
                     <div class="service-area-intro">
                         <label for="serviceAreaIntro" class="required">卡服务范围描述</label>
-                        <textarea name="serviceAreaIntro" id="serviceAreaIntro" placeholder="请输入卡服务范围描述"></textarea>
+                        <textarea class="service-area-intro" name="serviceAreaIntro" id="serviceAreaIntro" placeholder="请输入卡服务范围描述"></textarea>
                     </div>
                     <div class="cancel-confirm">
                         <button class="cancel" id="cancel" name="cancel" title="取消">取消</button>
