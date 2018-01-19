@@ -241,11 +241,9 @@
           &::after {
             content: "*";
             position: absolute;
-            top: 50%;
             right: 8px;
             font-size: $font-size;
             color: #f00;
-            transform: translateY(calc(-50% + 2px));
           }
         }
       }
@@ -291,6 +289,10 @@
           color: #a7a7a7;
           padding: 6px 20px;
           border-radius: 2px;
+          &:focus {
+            border-color: darken(#bfbfbf, 80%);
+            outline: none;
+          }
         }
       }
       &.cancel-confirm {
@@ -723,7 +725,7 @@
   }
 }
 
-/*===提现管理===*/
+/*======*/
 .content-wrapper {
   $width: 200px;
   $height: 40px;
@@ -820,6 +822,7 @@
           font-size: $font-size;
           cursor: pointer;
           &:focus {
+            border-color: darken(#bfbfbf, 80%);
             outline: none;
           }
           option {
@@ -834,19 +837,19 @@
         }
       }
       .money-wrapper {
-        $height: 60px;
+        $withdraw-money-height: 60px;
         min-width: 340px;
         width: 42%;
-        height: $height;
-        line-height: $height - 2;
+        height: $withdraw-money-height;
+        line-height: $withdraw-money-height - 2;
         border: 1px solid #bfbfbf;
         @extend .clearfix;
         .currency {
           float: left;
           display: block;
-          width: $height - 2;
-          height: $height - 2;
-          line-height: $height - 2;
+          width: $withdraw-money-height - 2;
+          height: $withdraw-money-height - 2;
+          line-height: $withdraw-money-height - 2;
           text-align: center;
           font-size: 30px;
           font-weight: bold;
@@ -855,7 +858,9 @@
         .my-money {
           float: left;
           display: block;
-          width: calc(100% - #{$height} - 96px);
+          width: calc(100% - #{$withdraw-money-height} - 96px);
+          height: $withdraw-money-height - 2;
+          line-height: $withdraw-money-height - 2;
           font-size: $font-size + 2;
           font-weight: 500;
           color: $text-info-color;
@@ -868,8 +873,8 @@
           display: block;
           float: right;
           width: 96px;
-          height: $height - 2;
-          line-height: $height - 2;
+          height: $withdraw-money-height - 2;
+          line-height: $withdraw-money-height - 2;
           text-align: center;
           background-color: transparent;
           color: $btn-bg-color;
@@ -1151,11 +1156,9 @@
             &::after {
               content: "*";
               position: absolute;
-              top: 50%;
               right: 8px;
               font-size: $font-size;
               color: #f00;
-              transform: translateY(calc(-50% + 2px));
             }
           }
         }
@@ -1275,7 +1278,6 @@
       background-color: $btn-bg-color;
     }
   }
-
   .subbranch-info {
     width: calc(100% - #{$width} - 20px);
     float: right;
@@ -1283,8 +1285,8 @@
     padding: 30px 20px 90px 40px;
     @extend .clearfix;
     .form-left {
-      $width: 114px;
-      $height: 34px;
+      $subbranch-form-label-width: 114px;
+      $subbranch-form-label-height: 34px;
       width: 66%;
       min-width: 622px;
       float: left;
@@ -1296,9 +1298,9 @@
           display: inline-block;
           vertical-align: middle;
           font-size: $font-size;
-          width: $width;
-          height: $height;
-          line-height: $height;
+          width: $subbranch-form-label-width;
+          height: $subbranch-form-label-height;
+          line-height: $subbranch-form-label-height;
           position: relative;
           padding-right: 18px;
           text-align: right;
@@ -1307,11 +1309,9 @@
             &::after {
               content: "*";
               position: absolute;
-              top: 50%;
               right: 8px;
               font-size: $font-size;
               color: #f00;
-              transform: translateY(calc(-50% + 2px));
             }
           }
         }
@@ -1320,16 +1320,16 @@
           font-size: 12px;
           height: 24px;
           line-height: 24px;
-          margin-left: $width;
+          margin-left: $subbranch-form-label-width;
 
         }
         input {
           display: inline-block;
           vertical-align: middle;
-          max-width: calc(100% - #{$width});
+          max-width: calc(100% - #{$subbranch-form-label-width});
           width: 44%;
-          height: $height;
-          line-height: $height - 2;
+          height: $subbranch-form-label-height;
+          line-height: $subbranch-form-label-height - 2;
           border: 1px solid #bfbfbf;
           font-size: $font-size;
           color: #a7a7a7;
@@ -1348,15 +1348,16 @@
             display: inline-block;
             vertical-align: middle;
             width: 44%;
-            max-width: calc(100% - #{$width});
-            height: $height;
-            line-height: $height - 2;
+            max-width: calc(100% - #{$subbranch-form-label-width});
+            height: $subbranch-form-label-height;
+            line-height: $subbranch-form-label-height - 2;
             padding-left: 20px;
             border: 1px solid #bfbfbf;
             color: #a7a7a7;
             font-size: $font-size;
             cursor: pointer;
             &:focus {
+              border-color: darken(#bfbfbf, 80%);
               outline: none;
             }
             option {
@@ -1374,23 +1375,27 @@
           textarea {
             display: inline-block;
             vertical-align: middle;
-            min-width: calc(100% - #{$width});
-            width: calc(100% - #{$width});
-            max-width: calc(100% - #{$width});
+            min-width: calc(100% - #{$subbranch-form-label-width});
+            width: calc(100% - #{$subbranch-form-label-width});
+            max-width: calc(100% - #{$subbranch-form-label-width});
             min-height: 100px;
             height: 150px;
             max-height: 150px;
-            line-height: $height - 12;
+            line-height: $subbranch-form-label-height - 12;
             border: 1px solid #bfbfbf;
             font-size: $font-size;
             color: #a7a7a7;
             padding: 6px 20px;
             border-radius: 2px;
             resize: vertical;
+            &:focus {
+              border-color: darken(#bfbfbf, 80%);
+              outline: none;
+            }
           }
         }
         &.cancel-confirm {
-          margin-left: $width;
+          margin-left: $subbranch-form-label-width;
           margin-top: 50px;
           font-size: 0;
           button {
@@ -1420,7 +1425,7 @@
           z-index: 99;
           display: inline-block;
           vertical-align: middle;
-          width: calc(100% - #{$width});
+          width: calc(100% - #{$subbranch-form-label-width});
           position: relative;
           height: 210px;
           .tips {
@@ -1508,4 +1513,305 @@
       width: 120px;
     }
   }
+
+  /*商家卡管理*/
+  .membership-card-nav {
+    width: $width;
+    float: left;
+    background-color: #fff;
+    a {
+      display: block;
+      width: 100%;
+      height: $height;
+      line-height: $height;
+      text-align: center;
+      color: $text-info-color;
+      font-size: $font-size;
+      &.active,
+      &:hover {
+        background-color: $main-color;
+        color: #fff;
+      }
+    }
+  }
+  .membership-card-form {
+    $membership-card-form-height: 32px;
+    $div-space-between: 60px;
+    width: calc(100% - #{$width} - 20px);
+    float: right;
+    background-color: #fff;
+    padding: 30px 130px;
+    > div {
+      float: left;
+      width: calc(50% - #{$div-space-between} / 2);
+      min-width: 240px;
+      margin-bottom: 18px;
+      &:nth-of-type(2n + 1) {
+        margin-right: $div-space-between;
+      }
+      label:not(.error) {
+        display: block;
+        font-size: $font-size;
+        width: 100%;
+        height: $membership-card-form-height;
+        line-height: $membership-card-form-height;
+        position: relative;
+        color: $text-color;
+        &.required {
+          &::before {
+            content: "*";
+            position: absolute;
+            left: -8px;
+            font-size: $font-size;
+            color: #f00;
+          }
+        }
+      }
+      label.error {
+        width: 100%;
+        display: block;
+        font-size: 12px;
+        height: 18px;
+        line-height: 18px;
+      }
+      input {
+        width: 100%;
+        display: block;
+        height: $membership-card-form-height + 2;
+        line-height: $membership-card-form-height;
+        border: 1px solid #bfbfbf;
+        font-size: $font-size;
+        color: #a7a7a7;
+        padding-right: 20px;
+        padding-left: 20px;
+        border-radius: 2px;
+        @extend %ellipsis;
+        &:focus {
+          border-color: darken(#bfbfbf, 80%);
+          outline: none;
+        }
+      }
+      select {
+        width: 100%;
+        height: $membership-card-form-height + 2;
+        line-height: $membership-card-form-height;
+        padding-left: 20px;
+        border: 1px solid #bfbfbf;
+        color: #a7a7a7;
+        font-size: $font-size;
+        cursor: pointer;
+        &:focus {
+          border-color: darken(#bfbfbf, 80%);
+          outline: none;
+        }
+        option {
+          height: 30px;
+          line-height: 30px;
+          padding-right: 20px;
+          padding-left: 20px;
+          color: $text-info-color;
+          font-size: $font-size;
+          cursor: pointer;
+        }
+      }
+      &.service-area-intro {
+        width: 100%;
+        textarea {
+          display: block;
+          min-width: 100%;
+          width: 100%;
+          max-width: 100%;
+          min-height: 100px;
+          height: 150px;
+          max-height: 150px;
+          line-height: $membership-card-form-height - 12;
+          border: 1px solid #bfbfbf;
+          font-size: $font-size;
+          color: #a7a7a7;
+          padding: 6px 20px;
+          border-radius: 2px;
+          &:focus {
+            border-color: darken(#bfbfbf, 80%);
+            outline: none;
+          }
+        }
+      }
+      &.cancel-confirm {
+        margin-top: 50px;
+        font-size: 0;
+        button {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: $font-size;
+          color: #fff;
+          padding: 10px 32px;
+          text-align: center;
+          border-radius: 40px;
+          &:not(:last-of-type) {
+            margin-right: 40px;
+          }
+        }
+        .cancel {
+          background-color: #eaeff9;
+          &:hover {
+            background-color: darken(#eaeff9, 8%);
+          }
+          &:focus {
+            background-color: darken(#eaeff9, 14%);
+          }
+        }
+        .confirm {
+          background-color: $btn-bg-color;
+          &:hover {
+            background-color: darken($btn-bg-color, 8%);
+          }
+          &:focus {
+            background-color: darken($btn-bg-color, 14%);
+          }
+        }
+      }
+    }
+  }
+  .membership-card-info {
+    $div-space-between: 60px;
+    width: calc(100% - #{$width} - 20px);
+    float: right;
+    background-color: #fff;
+    padding: 5px 5px 110px;
+    .membership-card-category {
+      width: 100%;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+      //margin-bottom: 15px;
+      color: $text-info-color;
+      font-size: $font-size;
+      font-weight: normal;
+      span {
+        display: inline-block;
+        position: relative;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50);
+          color: inherit;
+          background-color: currentColor;
+          width: 30px;
+          height: 1px;
+        }
+        &::before {
+          left: -45px;
+        }
+        &::after {
+          right: -45px;
+        }
+      }
+    }
+    .membership-card-item {
+      $border-radius: 4px;
+      $padding-left: 16px;
+      position: relative;
+      float: left;
+      width: 240px;
+      height: 150px;
+      padding-left: $padding-left;
+      margin: 15px;
+      background-color: $main-content-bg-color;
+      border-radius: $border-radius;
+      color: $text-info-color;
+      font-size: $font-size - 2;
+      .name {
+        width: calc(100% - 40px);
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 4px;
+        font-size: 16px;
+        font-weight: normal;
+        @extend %ellipsis;
+      }
+      .type,
+      .allotted-time,
+      .price {
+        width: calc(100% - #{$padding-left});
+        height: 22px;
+        line-height: 22px;
+        font-size: $font-size - 2;
+        @extend %ellipsis;
+      }
+      .category {
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        width: calc(100% - #{$padding-left});
+        text-align: right;
+        height: 24px;
+        line-height: 24px;
+        padding-right: calc(#{$padding-left} / 2);
+        font-size: $font-size - 2;
+        @extend %ellipsis;
+      }
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: transparent;
+        width: 40px;
+        height: 40px;
+        border: $border-radius;
+        &:hover {
+          color: #eee;
+        }
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 30px;
+          height: 3px;
+          color: #fff;
+          background-color: currentColor;
+          border-radius: 3px;
+          transform-origin: center;
+        }
+        &::before {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &::after {
+          transform: translate(-50%, -50%) rotate(135deg);
+        }
+      }
+    }
+    .membership-card-add-btn {
+      position: relative;
+      float: left;
+      width: 240px;
+      height: 150px;
+      margin: 15px;
+      border: 2px dashed #bfbfbf;
+      border-radius: 4px;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 5px;
+        background-color: $main-content-bg-color;
+        border-radius: 3px;
+      }
+      &::before {
+        transform: translate(-50%, -50%);
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+        transform-origin: center;
+      }
+    }
+  }
+
+
 }
