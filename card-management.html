@@ -32,27 +32,42 @@
             <ul class="sidebar-menu-list" id="sidebarMenuList" data-widget="tree">
                 <li>
                     <a href="" title="基本信息">
-                        <i class="iconfont icon-basic-info"></i>基本信息
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-basic-info"></use>
+                        </svg>
+                        <span>基本信息</span>
                     </a>
                 </li>
                 <li>
                     <a href="" title="分店管理">
-                        <i class="iconfont icon-subbranch"></i>分店管理
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-subbranch"></use>
+                        </svg>
+                        <span>分店管理</span>
                     </a>
                 </li>
                 <li>
                     <a href="" title="消费记录">
-                        <i class="iconfont icon-record"></i><span>消费记录</span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-record"></use>
+                        </svg>
+                        <span>消费记录</span>
                     </a>
                 </li>
                 <li>
                     <a href="" title="商家卡管理">
-                        <i class="iconfont icon-card"></i><span>商家卡管理</span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-card"></use>
+                        </svg>
+                        <span>商家卡管理</span>
                     </a>
                 </li>
                 <li>
                     <a href="" title="提现管理" class="active">
-                        <i class="iconfont icon-withdraw"></i><span>提现管理</span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-withdraw"></use>
+                        </svg>
+                        <span>提现管理</span>
                     </a>
                 </li>
             </ul>
@@ -67,24 +82,35 @@
                     <ul class="card-list" id="cardList">
                         <!-- 建设银行 ccb，交通银行 bocom，工商银行 icbc，中国银行 boc，农业银行 abc -->
                         <li class="card-item icbc" title="选中删除">
-                            <i class="iconfont icon-icbc"></i>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-icbc"></use>
+                            </svg>
                             <div class="bank-name">中国工商银行</div>
                             <div class="card-type">储蓄卡</div>
                             <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
                         </li>
                         <li class="card-item ccb" title="选中删除">
-                            <i class="iconfont icon-ccb"></i>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-ccb"></use>
+                            </svg>
                             <div class="bank-name">中国建设银行</div>
                             <div class="card-type">储蓄卡</div>
                             <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
                         </li>
                         <li class="card-item abc" title="选中删除">
-                            <i class="iconfont icon-abc"></i>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-abc"></use>
+                            </svg>
                             <div class="bank-name">中国农业银行</div>
                             <div class="card-type">储蓄卡</div>
                             <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
                         </li>
-                        <button type="button" id="addCardBtn" class="add-card-btn" title="新添加银行卡"><i class="iconfont icon-add"></i>新添加银行卡</button>
+                        <button type="button" id="addCardBtn" class="add-card-btn" title="新添加银行卡">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-add"></use>
+                            </svg>
+                            新添加银行卡
+                        </button>
                     </ul>
                     <button class="remove-btn default" id="removeBtn" type="button" title="不可用(请选中银行卡)">删除</button>
                     <div class="remove-card-wrapper default" id="removeCardWrapper">
@@ -122,6 +148,7 @@
         </main>
         <footer id="footer" role="contentinfo">
         </footer>
+        <script src="//at.alicdn.com/t/font_549063_cphlwrd7bas2lnmi.js"></script>
         <script src="scripts/jquery.min.js"></script>
         <script src="scripts/tuobei-business-back-end.js"></script>
         <script>

@@ -71,7 +71,7 @@ var uploadTools = {
             $("#"+uploadId+" .uploadBts .uploadFileBt").on("click",function(){
                 uploadEvent.uploadFileEvent(opt);
             });
-            $("#"+uploadId+" .uploadBts .uploadFileBt i").css("color","#70e1bd");
+            $("#"+uploadId+" .uploadBts .uploadFileBt .icon").css("color","#70e1bd");
         }
         if(opt.selfUploadBtId!=null&&opt.selfUploadBtId!=""){
             if(uploadTools.foundExitById(opt.selfUploadBtId)){
@@ -102,7 +102,7 @@ var uploadTools = {
             $("#"+uploadId+" .uploadBts .cleanFileBt").on("click",function(){
                 uploadEvent.cleanFileEvent(opt);
             });
-            $("#"+uploadId+" .uploadBts .cleanFileBt i").css("color","#70e1bd");
+            $("#"+uploadId+" .uploadBts .cleanFileBt .icon").css("color","#70e1bd");
         }
     },
     /**
@@ -124,7 +124,7 @@ var uploadTools = {
      * @param isImgUrl 如果事文件时的文件地址默认为null
      */
     "getShowFileType":function(isImg,fileType,fileName,isImgUrl,fileCodeId){
-        var showTypeStr="<div class='fileType'>"+fileType+"</div> <i class='iconfont icon-file'></i>";//默认显示类型
+        var showTypeStr="<div class='fileType'>"+fileType+"</div><svg class='icon' aria-hidden='true'><use xlink:href='#icon-file'></use></svg>";//默认显示类型
         if(isImg){
             if(isImgUrl!=null&&isImgUrl!="null"&&isImgUrl!=""){//图片显示类型
                 showTypeStr = "<img src='"+isImgUrl+"'/>";
@@ -136,7 +136,7 @@ var uploadTools = {
         modelStr+=showTypeStr;
         modelStr+=" </div>";
         modelStr+="<div class='status'>";
-        modelStr+="<i class='iconfont icon-remove'></i>";
+        modelStr+="<svg class='icon' aria-hidden='true' style='font-size: 16px;'><use xlink:href='#icon-remove'></use></svg>";
         modelStr+="</div>";
         modelStr+=" <div class='fileName'>";
         modelStr+=fileName;
@@ -160,13 +160,13 @@ var uploadTools = {
         //上传按钮
         if(!opt.isHiddenUploadBt){
             btsStr += "<div class='uploadFileBt' title='提交图片'>";
-            btsStr += "<i class='iconfont icon-upload'></i>";
+            btsStr += "<svg class='icon' aria-hidden='true'><use xlink:href='#icon-upload'></use></svg>";
             btsStr += " </div>";
         }
         //清理按钮
         if(!opt.isHiddenCleanBt){
             btsStr += "<div class='cleanFileBt' title='清除图片'>";
-            btsStr += "<i class='iconfont icon-clear'></i>";
+            btsStr += "<svg class='icon' aria-hidden='true'><use xlink:href='#icon-clear'></use></svg>";
             btsStr += " </div>";
         }
         btsStr += "</div>";
@@ -212,8 +212,8 @@ var uploadTools = {
      */
     "initWithDeleteFile":function(opt){
         var uploadId = opt.uploadId;
-        $("#"+uploadId+" .fileItem .status i").off();
-        $("#"+uploadId+" .fileItem .status i").on("click",function(){
+        $("#"+uploadId+" .fileItem .status .icon").off();
+        $("#"+uploadId+" .fileItem .status .icon").on("click",function(){
             uploadEvent.deleteFileEvent(opt,this);
         })
     },
@@ -324,7 +324,12 @@ var uploadTools = {
     "uploadError":function(opt){
         var uploadId = opt.uploadId;
 
-        $("#"+uploadId+" .box .fileItem .status>i").addClass("iconfont icon-error");
+        // <svg class="icon" aria-hidden="true">
+        //     <use xlink:href="#icon-placeholder-image"></use>
+        //     </svg>
+        // $("#"+uploadId+" .box .fileItem .status>i").addClass("iconfont icon-error");
+        $("#"+uploadId+" .box .fileItem .status > svg").addClass("icon").css("fontSize", "16px");
+        $("#"+uploadId+" .box .fileItem .status > svg use").attr("xlink:href", "#icon-error");
         var progressBar = $("#"+uploadId+" .subberProgress .progress>div");
         progressBar.css("width","0%");
         progressBar.html("0%");
@@ -335,8 +340,10 @@ var uploadTools = {
      */
     "uploadSuccess":function(opt){
         var uploadId = opt.uploadId;
-        $("#"+uploadId+" .box .fileItem .status>i").off();
-        $("#"+uploadId+" .box .fileItem .status>i").addClass("iconfont icon-right");
+        $("#"+uploadId+" .box .fileItem .status .icon").off();
+        //$("#"+uploadId+" .box .fileItem .status>i").addClass("iconfont icon-right");
+        $("#"+uploadId+" .box .fileItem .status > svg").addClass("icon").css("fontSize", "16px");
+        $("#"+uploadId+" .box .fileItem .status > svg use").attr("xlink:href", "#icon-right");
         var progressBar = $("#"+uploadId+" .subberProgress .progress>div");
         progressBar.css("width","0%");
         progressBar.html("0%");
@@ -418,7 +425,7 @@ var uploadTools = {
      */
     "getFileUploadPregressMsg":function(opt){
         var uploadId = opt.uploadId;
-        $("#"+uploadId+" .box .fileItem .status>i").removeClass();
+        $("#"+uploadId+" .box .fileItem .status .icon").removeClass();
         if(opt.uploadUrl=="#"||opt.uploadUrl==""){
             if(opt.velocity==null||opt.velocity==""||opt.velocity<=0){
                 opt.velocity = 1;
@@ -459,7 +466,7 @@ var uploadTools = {
         if(!opt.isHiddenUploadBt){
             var uploadId = opt.uploadId;
             $("#"+uploadId+" .uploadBts .uploadFileBt").off();
-            $("#"+uploadId+" .uploadBts .uploadFileBt i").css("color","#DDDDDD");
+            $("#"+uploadId+" .uploadBts .uploadFileBt .icon").css("color","#DDDDDD");
         }
     },
     /**
@@ -469,7 +476,7 @@ var uploadTools = {
         if(!opt.isHiddenCleanBt){
             var uploadId = opt.uploadId;
             $("#"+uploadId+" .uploadBts .cleanFileBt").off();
-            $("#"+uploadId+" .uploadBts .cleanFileBt i").css("color","#DDDDDD");
+            $("#"+uploadId+" .uploadBts .cleanFileBt .icon").css("color","#DDDDDD");
         }
 
     },

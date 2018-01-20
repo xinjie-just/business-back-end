@@ -25,7 +25,7 @@
     margin: 5px auto;
     text-align: center;
 }
-.fileUploadContent .fileItem .imgShow i{
+.fileUploadContent .fileItem .imgShow .icon{
     font-size: 120px;
     position: relative;
     top:-30px;
@@ -61,14 +61,14 @@
     font-size: 15px;
     text-align: center;
 }
-.fileUploadContent .fileItem .status i{
+.fileUploadContent .fileItem .status .icon{
     display: block;
     float: left;
-    padding: 2px 5px;
+    /*padding: 2px 5px;*/
     color: red;
     margin-left: 3px;
     border-radius: 5px;;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
 }
 .fileUploadContent .fileItem .fileName{
@@ -116,7 +116,7 @@
 .fileUploadContent .uploadBts>div .selectFileBt:hover{
     background-color: #81f2ce;
 }
-.fileUploadContent .uploadBts>div i{
+.fileUploadContent .uploadBts>div .icon{
     font-size: 24px;
     color: #70e1bd;
     cursor: pointer;

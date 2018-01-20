@@ -128,7 +128,7 @@
         font-size: $font-size;
         padding-left: 40px;
         border-left: 3px solid transparent;
-        i {
+        .icon {
           font-size: $font-size + 2;
           margin-right: 6px;
         }
@@ -360,7 +360,7 @@
         text-align: center;
         border-radius: 2px;
         margin: 9px;
-        i {
+        .icon {
           display: block;
           margin-right: auto;
           margin-left: auto;
@@ -407,7 +407,7 @@
         text-align: center;
         border-radius: 2px;
         margin: 9px;
-        i {
+        .icon {
           display: block;
           margin-right: auto;
           margin-left: auto;
@@ -1003,7 +1003,7 @@
           font-size: 14px;
           line-height: 24px;
         }
-        i {
+        .icon {
           position: absolute;
           top: 50%;
           left: 20px;
@@ -1030,7 +1030,7 @@
         &:focus {
           background-color: darken(#fff, 14%);
         }
-        i {
+        .icon {
           position: absolute;
           top: 14px;
           left: 50%;
@@ -1453,7 +1453,7 @@
               text-align: center;
               border-radius: 2px;
               margin: 9px;
-              i {
+              .icon {
                 display: block;
                 margin-right: auto;
                 margin-left: auto;
