@@ -1210,6 +1210,28 @@
             background-color: $btn-bg-color;
           }
         }
+        &.verification-code {
+          position: relative;
+          input {
+            padding-right: 150px;
+          }
+          .get-verification-code-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            width: 144px;
+            padding-right: 4px;
+            font-size: 12px;
+            text-align: center;
+            color: $btn-bg-color;
+            height: $add-card-form-height;
+            line-height: $add-card-form-height - 2;
+            &:hover {
+              background-color: #efefef;
+            }
+          }
+        }
       }
       .remove-card-handle {
         margin-top: 40px;

@@ -1503,6 +1503,28 @@ label.error {
 .content-wrapper .card-management-content .add-card-wrapper > div.add-card-handle .confirm {
   background-color: #70e1bd;
 }
+.content-wrapper .card-management-content .add-card-wrapper > div.verification-code {
+  position: relative;
+}
+.content-wrapper .card-management-content .add-card-wrapper > div.verification-code input {
+  padding-right: 150px;
+}
+.content-wrapper .card-management-content .add-card-wrapper > div.verification-code .get-verification-code-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 144px;
+  padding-right: 4px;
+  font-size: 12px;
+  text-align: center;
+  color: #70e1bd;
+  height: 34px;
+  line-height: 32px;
+}
+.content-wrapper .card-management-content .add-card-wrapper > div.verification-code .get-verification-code-btn:hover {
+  background-color: #efefef;
+}
 .content-wrapper .card-management-content .add-card-wrapper .remove-card-handle {
   margin-top: 40px;
 }
