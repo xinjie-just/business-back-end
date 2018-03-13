@@ -333,7 +333,7 @@ label:hover {
   opacity: .8;
 }
 
-#header .custom-menu li.user-menu img, #footer, .basic-info .row > div input, .basic-info .business-license-file-upload .placeholder-img-list li span, .basic-info .business-picture-file-upload .placeholder-img-list li span, .basic-info .logo-file-upload .placeholder-img-list li span, .handle-list .condition-list > div input, .record-list table.record-list-table thead tr th, .record-list table.record-list-table tbody tr td, .content-wrapper .card-management-content .add-card-wrapper > div input, .content-wrapper .subbranch-info .form-left > div input, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list li span, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list li span, .content-wrapper .membership-card-form > div input, .content-wrapper .membership-card-info .membership-card-item .name, .content-wrapper .membership-card-info .membership-card-item .type,
+#header .custom-menu li.user-menu img, #footer, .basic-info .row > div input, .basic-info .business-license-file-upload .placeholder-img-list li span, .basic-info .business-picture-file-upload .placeholder-img-list li span, .basic-info .logo-file-upload .placeholder-img-list li span, .handle-list .condition-list > div input, .record-list table.record-list-table thead tr th, .record-list table.record-list-table tbody tr td, .content-wrapper .card-management-content .add-card-wrapper > div input, .content-wrapper .card-management-content .add-card-wrapper > div select, .content-wrapper .subbranch-info .form-left > div input, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list li span, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list li span, .content-wrapper .membership-card-form > div input, .content-wrapper .membership-card-info .membership-card-item .name, .content-wrapper .membership-card-info .membership-card-item .type,
 .content-wrapper .membership-card-info .membership-card-item .allotted-time,
 .content-wrapper .membership-card-info .membership-card-item .price, .content-wrapper .membership-card-info .membership-card-item .category {
   overflow: hidden;
@@ -1479,6 +1479,32 @@ label.error {
 .content-wrapper .card-management-content .add-card-wrapper > div input:focus {
   border-color: black;
   outline: none;
+}
+.content-wrapper .card-management-content .add-card-wrapper > div select {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 90px);
+  height: 34px;
+  line-height: 32px;
+  border: 1px solid #bfbfbf;
+  font-size: 14px;
+  color: #a7a7a7;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 2px;
+}
+.content-wrapper .card-management-content .add-card-wrapper > div select:focus {
+  border-color: black;
+  outline: none;
+}
+.content-wrapper .card-management-content .add-card-wrapper > div select option {
+  height: 30px;
+  line-height: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #2b2b2b;
+  font-size: 14px;
+  cursor: pointer;
 }
 .content-wrapper .card-management-content .add-card-wrapper > div.add-card-handle {
   margin-left: 200px;
